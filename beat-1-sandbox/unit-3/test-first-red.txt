@@ -1,0 +1,21 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____________ TestStructuralChunker.test_document_with_no_headings _____________
+
+self = <tests.unit.test_structural_chunker.TestStructuralChunker object at 0x10afc5d90>
+chunker = <ingestion.chunking.structural_chunker.StructuralChunker object at 0x10afd0ed0>
+
+    def test_document_with_no_headings(self, chunker):
+        """Retain plain text and source metadata without inventing a heading."""
+        text = "This is plain text without any markdown headings. " * 20
+        metadata = {"source": "test", "document_id": "headingless-56"}
+        result = chunker.chunk(text, metadata)
+    
+>       assert len(result) == 1
+E       assert 0 == 1
+E        +  where 0 = len([])
+
+tests/unit/test_structural_chunker.py:34: AssertionError
+=========================== short test summary info ============================
+FAILED tests/unit/test_structural_chunker.py::TestStructuralChunker::test_document_with_no_headings
+1 failed in 0.14s

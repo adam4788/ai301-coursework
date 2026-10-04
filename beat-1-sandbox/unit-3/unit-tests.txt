@@ -1,0 +1,37 @@
+x..........xx.....x.............x.xxx.x...x..x...x......x....x.......... [ 16%]
+.x...........................................x............xx.......x.... [ 33%]
+.x....x........................x........................................ [ 50%]
+.........................x........x.....x........................x...... [ 66%]
+..........xx.x..xx...xxxxx...xxx.xxx.xx.....................x........... [ 83%]
+..........x....xx..xx.........................x.x.....................   [100%]
+=============================== warnings summary ===============================
+core/config.py:7
+  /Users/adamnugroho/Projects/pathreview-ai301-fa26-s3/core/config.py:7: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+    class Settings(BaseSettings):
+
+.venv/lib/python3.11/site-packages/passlib/utils/__init__.py:854
+  /Users/adamnugroho/Projects/pathreview-ai301-fa26-s3/.venv/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+    from crypt import crypt as _crypt
+
+tests/unit/test_review_service.py::TestReviewService::test_list_reviews_returns_tuple
+  /Users/adamnugroho/.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/enum.py:714: RuntimeWarning: coroutine 'AsyncMockMixin._execute_mock_call' was never awaited
+    return cls.__new__(cls, value)
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+
+tests/unit/test_review_service.py::TestReviewService::test_list_reviews_returns_reviews_list
+  /Users/adamnugroho/.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/inspect.py:2328: RuntimeWarning: coroutine 'AsyncMockMixin._execute_mock_call' was never awaited
+    return _signature_fromstr(cls, func, s, skip_bound_arg)
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== warnings summary (final) ===========================
+../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/ast.py:50
+  /Users/adamnugroho/.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/ast.py:50: RuntimeWarning: coroutine 'AsyncMockMixin._execute_mock_call' was never awaited
+    return compile(source, filename, mode, flags,
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+378 passed, 52 xfailed, 5 warnings in 12.74s

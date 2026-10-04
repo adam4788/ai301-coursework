@@ -1,0 +1,7 @@
+input_chars: 1000
+headingless_chunks: 1
+heading_control_chunks: 1
+plain_text_retained: True
+heading_path: ''
+heading_level: 0
+source: issue-56-repro

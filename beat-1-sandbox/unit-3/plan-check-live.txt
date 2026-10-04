@@ -1,0 +1,36 @@
+## Summary
+
+**Scope check (live mode):** Issue #56 is in `codepath/pathreview-ai301-fa26-s3`, matching scope.md's `Repo:` line. In scope.
+
+**Reproduction evidence used:** Confirmed via `gh issue view 56` that comment `issuecomment-5805899592` is adam4788's own posted comment (`viewerDidAuthor: true`), containing `input_chars: 1000`, `headingless_chunks: 0`, `heading_control_chunks: 1`, and the `XFAIL` on `test_document_with_no_headings`. This is the evidence the plan and comment build from — correctly the student's own, not a classmate's.
+
+**Source verification:** Pulled `ingestion/chunking/structural_chunker.py` live. Confirmed `_extract_sections()` only appends content lines `if heading_stack or current_section_lines`, both empty at start for a headingless doc, so no section is ever built — exactly what the plan's diagnosis states. The plan's correction that "the unused `current_level` assignment is not itself the cause" is also accurate: the seeded in-code comment points at `current_level`, but the real gate is the `else` branch's `if heading_stack or current_section_lines` check.
+
+### Checks
+
+- **diagnosis-grounded — pass.** Cause (`_extract_sections` never collects lines before any heading is seen) matches the reproduced 0-vs-1 chunk outcome and the control, and is verified against the actual source.
+- **bounded-scope — pass.** Explicit in/out-of-scope list (headingless docs only; excludes pre-heading text in headed docs, heading-regex changes, `SemanticChunker` rewrite, unrelated lint). Only two files touched.
+- **executable — pass.** Names exact file/function (`_extract_sections()` in `structural_chunker.py`), the concrete behavior change (synthesize one section, empty path, level 0), and reuses `chunk()`'s existing size-branch unchanged — confirmed accurate against the real source.
+- **test-decisive — pass.** Reruns the exact repro input/control from the cited comment, states observable expected-after values (chunk count, `heading_path=""`, `heading_level=0`), converts `xfail`→real test, adds an over-800-token case, and checks empty/whitespace-only stays `[]`. Controls remain checkable.
+- **honest-claims — pass.** Plan is explicitly labeled "draft... not posted, implemented, or claimed fixed"; comment ends "I haven't built the change yet"; deferred adjacent bug (pre-heading text drop) is disclosed rather than silently expanded.
+- **comment-faithful — pass.** Draft comment's diagnosis, scope, and test plan match plan.md and the cited repro; no completed-result claim, no piggybacking (own repro, own diagnosis), and no maintainer directive on the thread to ignore (all other commenters are students, `authorAssociation: NONE`).
+- **stated-conventions — pass.** `docs/CONTRIBUTING.md` requires removing the issue's `xfail` marker when fixing it — plan does this. Branch name `fix/56-headingless-documents` matches both CONTRIBUTING.md's and scope.md's `<type>/<issue-number>-<slug>` convention, on the student's own fork. Plan does not touch the seeded `# noqa: F841` line or bulk-fix lint, consistent with "don't clean up noqa" / "don't bulk-fix" rules. No AI-disclosure policy is stated anywhere in CONTRIBUTING.md or scope.md, so its absence here is not a failure.
+
+### Voice notes (advisory, live mode only)
+No rule breaks found. The draft separates past observation ("My repro above returned...") from future plan ("I plan to...", "I'll turn...") and closes with "I haven't built the change yet" — matching Rule: Separate plans from observations. Scope is kept bounded with explicit exclusions, matching Rule: Keep scope bounded. Language is plain and concrete throughout.
+
+```json
+{
+  "item": "https://github.com/codepath/pathreview-ai301-fa26-s3/issues/56",
+  "checks": [
+    {"name": "diagnosis-grounded", "grade": "pass", "evidence": "Plan: '_extract_sections... Both begin empty; without a heading neither gets populated' matches live source `if heading_stack or current_section_lines:` gate and the cited repro (0 vs 1 chunks)."},
+    {"name": "bounded-scope", "grade": "pass", "evidence": "Plan.md 'Scope' section: in-scope headingless sections only; explicitly excludes pre-heading text, heading-regex changes, SemanticChunker rewrite, unrelated lint; only structural_chunker.py and its test file touched."},
+    {"name": "executable", "grade": "pass", "evidence": "Plan names `_extract_sections()` in `ingestion/chunking/structural_chunker.py`, the exact behavior to add (synthesize one section, path=[], level=0), confirmed to exist and match live source fetched via gh."},
+    {"name": "test-decisive", "grade": "pass", "evidence": "Test plan reruns the cited repro's exact input/control, states expected chunk counts and metadata, converts xfail to a real test, adds >800-token and empty-input checks."},
+    {"name": "honest-claims", "grade": "pass", "evidence": "plan.md Status line: 'draft for Adam's review; not posted, implemented, or claimed fixed'; Deviations section: 'No plan has been posted and no implementation has begun.'"},
+    {"name": "comment-faithful", "grade": "pass", "evidence": "Draft comment's diagnosis/scope/test plan match plan.md and the cited repro comment issuecomment-5805899592; ends 'I haven't built the change yet'; no maintainer direction exists in the thread to ignore (all commenters authorAssociation: NONE)."},
+    {"name": "stated-conventions", "grade": "pass", "evidence": "docs/CONTRIBUTING.md: 'removing the @pytest.mark.xfail line is part of fixing the issue' — plan includes this; branch `fix/56-headingless-documents` matches `<type>/<issue-number>-<slug>`; no stated AI-disclosure policy exists to violate."}
+  ],
+  "verdict": "accept"
+}
+```

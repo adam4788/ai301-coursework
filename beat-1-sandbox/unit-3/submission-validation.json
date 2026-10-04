@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "required_artifacts": [
+    "beat-1-sandbox/unit-3/plan.md",
+    "beat-1-sandbox/unit-3/eval-run.txt",
+    "beat-1-sandbox/unit-3/plan-and-implement.md",
+    "tools/plan-check/SKILL.md",
+    "tools/plan-check/rubric.md",
+    "tools/plan-check/procedure.md",
+    "tools/plan-check/scope.md",
+    "tools/plan-check/voice-guide.md",
+    "tools/plan-check/references/evidence-guide.md"
+  ],
+  "required_count": 9,
+  "skill_sync": true,
+  "shipped_skill_unchanged": true,
+  "unit2_voice_preserved": true,
+  "eval_fingerprints_match": true,
+  "eval_agreements": 19,
+  "eval_packages": 20,
+  "categories": {
+    "wrong-cause": {
+      "agree": 4,
+      "total": 4
+    },
+    "clear-accept": {
+      "agree": 7,
+      "total": 7
+    },
+    "thread-convention": {
+      "agree": 1,
+      "total": 2
+    },
+    "scope-creep": {
+      "agree": 4,
+      "total": 4
+    },
+    "unbuildable": {
+      "agree": 3,
+      "total": 3
+    }
+  },
+  "all_submission_fields_filled": true,
+  "posted_comment_verbatim": true,
+  "rubric_quote_exact": true,
+  "source_branch": "fix/56-headingless-documents",
+  "source_commit": "8cac1b13463ec3dec7a4cf2016107ef19baa2ca1",
+  "source_files": [
+    "ingestion/chunking/structural_chunker.py",
+    "tests/unit/test_structural_chunker.py"
+  ],
+  "source_remote_sha_matches": true,
+  "portal_hours_user_supplied": 2
+}
