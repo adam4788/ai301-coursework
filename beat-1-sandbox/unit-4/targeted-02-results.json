@@ -1,0 +1,354 @@
+{
+  "tool_dir": "/Users/adamnugroho/.claude/skills/pr-precheck",
+  "model": "sonnet",
+  "agreement": [
+    8,
+    8
+  ],
+  "results": [
+    {
+      "id": "pkg-07",
+      "verdict": "reject",
+      "failed_checks": [
+        "observable-tests"
+      ],
+      "checks": [
+        {
+          "name": "plan-fidelity",
+          "grade": "pass",
+          "evidence": "Diff groups TextEdits by fset.File(edit.Pos) and applies per-file, skipping unresolvable edits with a warning \u2014 matches plan scope exactly; test added beside runner_fix.go."
+        },
+        {
+          "name": "observable-tests",
+          "grade": "fail",
+          "evidence": "Test evidence only runs the single-file control (`./onefile/`) and a unit test with both edits in a.go; the plan's required two-file repro (a.go/b.go cross-file fix) is never run or reported."
+        },
+        {
+          "name": "reviewable-diff",
+          "grade": "pass",
+          "evidence": "Diff touches only runner_fix.go and its test file, no unrelated edits or debris."
+        },
+        {
+          "name": "faithful-claims",
+          "grade": "pass",
+          "evidence": "Test evidence text accurately scopes itself to 'the single-file case' rather than asserting the cross-file fix was verified."
+        },
+        {
+          "name": "stated-standards",
+          "grade": "pass",
+          "evidence": "Repo facts require only a brief description (present); linter-author and new-linter-discussion rules are inapplicable to this bug-fix PR; no AI-disclosure policy stated."
+        },
+        {
+          "name": "clear-summary",
+          "grade": "pass",
+          "evidence": "Title 'goanalysis: apply suggested fixes to the file each edit targets' and description plainly identify the bug and fix mechanism."
+        }
+      ],
+      "error": null,
+      "gold": "reject",
+      "category": "not-tested",
+      "calibration": false
+    },
+    {
+      "id": "pkg-08",
+      "verdict": "accept",
+      "failed_checks": [],
+      "checks": [
+        {
+          "name": "plan-fidelity",
+          "grade": "pass",
+          "evidence": "Diff adds only the tracked-changes guard + toast in files_controller.go, the i18n entry, and one integration test \u2014 matching the plan's bounded scope and explicit 'not in scope' exclusions."
+        },
+        {
+          "name": "observable-tests",
+          "grade": "pass",
+          "evidence": "Test evidence reports actual before/after repro outcomes, a reported control result ('still prompts and creates the stash'), and named passing commands (integration test, go test ./..., go generate ./...)."
+        },
+        {
+          "name": "reviewable-diff",
+          "grade": "pass",
+          "evidence": "Only three files touched (controller, i18n, new test), no debris or unrelated edits."
+        },
+        {
+          "name": "faithful-claims",
+          "grade": "pass",
+          "evidence": "Cheatsheet/i18n/test/UserConfig claims are each backed by diff or test evidence; no contradicted claim found."
+        },
+        {
+          "name": "stated-standards",
+          "grade": "pass",
+          "evidence": "Description references #5883 and addresses every template checklist item, including a justified N/A for UserConfig; no AI policy stated to violate."
+        },
+        {
+          "name": "clear-summary",
+          "grade": "pass",
+          "evidence": "Title 'Show an error instead of the stash prompt when only untracked files exist' is specific and matches the diff's behavior."
+        }
+      ],
+      "error": null,
+      "gold": "accept",
+      "category": "clear-accept",
+      "calibration": false
+    },
+    {
+      "id": "pkg-09",
+      "verdict": "reject",
+      "failed_checks": [
+        "plan-fidelity",
+        "reviewable-diff",
+        "faithful-claims",
+        "stated-standards",
+        "clear-summary"
+      ],
+      "checks": [
+        {
+          "name": "plan-fidelity",
+          "grade": "fail",
+          "evidence": "Commits 7a95d33 (unrelated doc-comment rewording) and 3d0c6b1 (new --time-format flag) and the global error.rs trim change are outside the plan's bounded scope, which explicitly excludes new flags and other error messages; no deviation is recorded, and 'exactly as planned' is false."
+        },
+        {
+          "name": "observable-tests",
+          "grade": "pass",
+          "evidence": "Test evidence shows concrete before/after output for both the out-of-range case and the format-typo control, matching the plan's expected wording, plus 'cargo test passes (612 tests)'."
+        },
+        {
+          "name": "reviewable-diff",
+          "grade": "fail",
+          "evidence": "Diff bundles the issue fix with an unrelated new flag (--time-format), unrelated help-text rewording for other flags, and a global error.rs formatting change with no issue-related justification."
+        },
+        {
+          "name": "faithful-claims",
+          "grade": "fail",
+          "evidence": "Description claims 'improved exactly as planned' and 'CHANGELOG entry added', both contradicted by the diff, which shows out-of-plan additions and no CHANGELOG.md hunk."
+        },
+        {
+          "name": "stated-standards",
+          "grade": "fail",
+          "evidence": "Repo facts require a CHANGELOG.md entry for behavior changes, but the diff contains no CHANGELOG.md change despite the description claiming one was added."
+        },
+        {
+          "name": "clear-summary",
+          "grade": "fail",
+          "evidence": "Description's 'exactly as planned' is an unsupported promise given the diff's unrelated additions; preferred check, does not affect verdict."
+        }
+      ],
+      "error": null,
+      "gold": "reject",
+      "category": "silent-drift",
+      "calibration": false
+    },
+    {
+      "id": "pkg-11",
+      "verdict": "accept",
+      "failed_checks": [],
+      "checks": [
+        {
+          "name": "plan-fidelity",
+          "grade": "pass",
+          "evidence": "Diff is confined to crates/ignore/src/gitignore.rs (parse fn + new trim_unescaped_trailing_spaces helper + tests), matching the plan's bounded scope and file list exactly."
+        },
+        {
+          "name": "observable-tests",
+          "grade": "pass",
+          "evidence": "Test evidence reproduces the exact issue repro (before/after rg hi error), the git-parity control (touch 'foo '; rg --files), and reports cargo test -p ignore with a concrete result (214 tests)."
+        },
+        {
+          "name": "reviewable-diff",
+          "grade": "pass",
+          "evidence": "Single commit, single file touched, one focused helper function plus tests, no unrelated edits or debris."
+        },
+        {
+          "name": "faithful-claims",
+          "grade": "pass",
+          "evidence": "Description's stop-at-odd-backslash claim matches the diff; the 'escaped/unescaped/double-backslash' test enumeration is loosely worded but not contradicted by the two added test blocks."
+        },
+        {
+          "name": "stated-standards",
+          "grade": "pass",
+          "evidence": "No PR template to satisfy; tests added per contribution docs; explicit first-person AI-assistance disclosure present per CONTRIBUTING.md 'Use of AI' / AI_POLICY.md; issue #3477 referenced."
+        },
+        {
+          "name": "clear-summary",
+          "grade": "pass",
+          "evidence": "Title and description name the exact mechanism (trim stopping at odd backslash count) and cite #3477 without generic praise."
+        }
+      ],
+      "error": null,
+      "gold": "accept",
+      "category": "clear-accept",
+      "calibration": false
+    },
+    {
+      "id": "pkg-12",
+      "verdict": "reject",
+      "failed_checks": [
+        "plan-fidelity",
+        "reviewable-diff",
+        "faithful-claims",
+        "stated-standards"
+      ],
+      "checks": [
+        {
+          "name": "plan-fidelity",
+          "grade": "fail",
+          "evidence": "Diff adds undisclosed debug/dead-code artifacts (commented eprintln, _unused_buffer_probe, commented alternate attempt, TODO) not in the plan's bounded scope, with no recorded deviation."
+        },
+        {
+          "name": "observable-tests",
+          "grade": "pass",
+          "evidence": "Repro shows concrete before/after (exit 101 \u2192 exit 0, 'l1\\nl2' printed) plus a matching regression test and reported cargo test pass."
+        },
+        {
+          "name": "reviewable-diff",
+          "grade": "fail",
+          "evidence": "Commented-out debug eprintln, abandoned commented-out alternate code, unused scratch function, and unexplained whitespace churn in the while-loop hunk."
+        },
+        {
+          "name": "faithful-claims",
+          "grade": "fail",
+          "evidence": "Description claims 'CHANGELOG entry included' but the diff has no CHANGELOG.md change."
+        },
+        {
+          "name": "stated-standards",
+          "grade": "fail",
+          "evidence": "Repo facts require a CHANGELOG.md entry for behavior changes; none appears in the diff."
+        },
+        {
+          "name": "clear-summary",
+          "grade": "pass",
+          "evidence": "Title and description specifically name the issue, mechanism, and fix without generic praise."
+        }
+      ],
+      "error": null,
+      "gold": "reject",
+      "category": "unreviewable",
+      "calibration": false
+    },
+    {
+      "id": "pkg-13",
+      "verdict": "accept",
+      "failed_checks": [],
+      "checks": [
+        {
+          "name": "plan-fidelity",
+          "grade": "pass",
+          "evidence": "Diff is confined to runtime/lua/vim/ui.lua and test/functional/lua/ui_spec.lua exactly as planned; the % deferral is stated in both plan and description, no hidden expansion."
+        },
+        {
+          "name": "observable-tests",
+          "grade": "pass",
+          "evidence": "Repro shows concrete before/after (exit code 1\u21920, truncated\u2192full URL) plus a named command 'TEST_FILE=...ui_spec.lua make functionaltest' with reported pass result including the new case; control outcome is reported alongside the concrete repro."
+        },
+        {
+          "name": "reviewable-diff",
+          "grade": "pass",
+          "evidence": "Single commit, two files, no debris/commented-out code/unrelated edits; added comment explains the non-obvious cmd.exe re-parsing cause."
+        },
+        {
+          "name": "faithful-claims",
+          "grade": "pass",
+          "evidence": "Description's claimed escape set (& ^ | < >) and stated % limitation match the diff's gsub('[&|^<>]', '^%0') exactly; no contradicted or overstated claim."
+        },
+        {
+          "name": "stated-standards",
+          "grade": "pass",
+          "evidence": "Description contains labeled 'Problem:' and 'Solution:' sections per the repo template; new functional test satisfies CONTRIBUTING's tests-for-behavior-change rule; no stated AI-disclosure policy to satisfy."
+        },
+        {
+          "name": "clear-summary",
+          "grade": "pass",
+          "evidence": "Title and description name the exact mechanism (cmd.exe metacharacter re-parsing) and the issue number without generic praise."
+        }
+      ],
+      "error": null,
+      "gold": "accept",
+      "category": "clear-accept",
+      "calibration": false
+    },
+    {
+      "id": "pkg-19",
+      "verdict": "accept",
+      "failed_checks": [],
+      "checks": [
+        {
+          "name": "plan-fidelity",
+          "grade": "pass",
+          "evidence": "Diff removes only the two indention/whitespace reset lines after write_break in yaml_emitter_write_single_quoted_scalar and adds one test in pkg/yqlib/operator_style_test.go, exactly matching the plan's single bounded change and named files; no other scalar style or parser touched."
+        },
+        {
+          "name": "observable-tests",
+          "grade": "pass",
+          "evidence": "Test evidence shows actual `yq . source.yml` before/after output plus `diff ... && echo IDENTICAL`, reports controls as unchanged, and reports `go test ./...` passing (4108 tests) \u2014 a concrete issue reproduction anchoring reported control/suite outcomes."
+        },
+        {
+          "name": "reviewable-diff",
+          "grade": "pass",
+          "evidence": "Diff touches only the emitter break-handling site (2 lines removed, comment updated) and one new test case; no unrelated files, debug lines, or commented-out code."
+        },
+        {
+          "name": "faithful-claims",
+          "grade": "pass",
+          "evidence": "Description's claims (reset removed at break site, parity with double-quoted writer, regression test added) are all directly supported by the diff and test evidence with no unqualified success claims."
+        },
+        {
+          "name": "stated-standards",
+          "grade": "pass",
+          "evidence": "Repo facts: no PR template, no AI policy; CONTRIBUTING.md only asks for tests with fixes, satisfied by the added regression test in pkg/yqlib/operator_style_test.go."
+        },
+        {
+          "name": "clear-summary",
+          "grade": "pass",
+          "evidence": "Title 'Preserve indent for single-quoted scalars ending in a blank line' and description naming #2819 and the exact mechanism are specific and reviewer-legible."
+        }
+      ],
+      "error": null,
+      "gold": "accept",
+      "category": "clear-accept",
+      "calibration": false
+    },
+    {
+      "id": "pkg-20",
+      "verdict": "reject",
+      "failed_checks": [
+        "observable-tests",
+        "faithful-claims"
+      ],
+      "checks": [
+        {
+          "name": "plan-fidelity",
+          "grade": "pass",
+          "evidence": "Diff hunk in src/config/Config.zig matches plan's bounded change (`key != .theme and !self._conditional_set.contains(key)`); test-block edits stay within the plan's named file."
+        },
+        {
+          "name": "observable-tests",
+          "grade": "fail",
+          "evidence": "Conditional-pair control is only described as 'Expected-after per the plan: ... still returns ?997;1n' with no shown command/output, unlike the single-theme case's actual before/after transcript."
+        },
+        {
+          "name": "reviewable-diff",
+          "grade": "pass",
+          "evidence": "Diff is one focused hunk plus a matching test update/addition in the same test block; no unrelated files or debris."
+        },
+        {
+          "name": "faithful-claims",
+          "grade": "fail",
+          "evidence": "Description claims 'a second case covers the single-theme scheme flip' but the actual second test ('still ignores unrelated keys') exercises .fullscreen, not the scheme flip."
+        },
+        {
+          "name": "stated-standards",
+          "grade": "pass",
+          "evidence": "Issue #13604 is referenced in the description; no PR template exists and no evidence of AI assistance is present to trigger the conditional AI-disclosure requirement."
+        },
+        {
+          "name": "clear-summary",
+          "grade": "pass",
+          "evidence": "Title 'config: rebuild conditional state on scheme change with non-conditional themes' and description precisely identify the change and its purpose."
+        }
+      ],
+      "error": null,
+      "gold": "reject",
+      "category": "standards-wall",
+      "calibration": false
+    }
+  ]
+}

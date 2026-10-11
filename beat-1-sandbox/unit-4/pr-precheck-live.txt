@@ -1,0 +1,36 @@
+# PR Precheck Grading — PR #131 (Issue #56)
+
+**Mode:** Live. Scope verified (repo matches `codepath/pathreview-ai301-fa26-s3`, no placeholder). Package: plan.md, pr_draft.md (identical to the PR's as-opened body, confirmed via `gh pr view`), test_evidence.md, `git diff main...HEAD`, issue #56 thread, repo PR template, docs/CONTRIBUTING.md, and live GitHub CI status.
+
+## Per-check findings
+
+**plan-fidelity — pass.** The committed diff touches exactly the two files named in plan.md: `ingestion/chunking/structural_chunker.py` (+5/-1) and `tests/unit/test_structural_chunker.py` (+43/-7). The implementation matches the plan exactly — a no-heading check returns one section with empty path/level 0, reusing the existing `chunk()` path. The one implementation detail not pre-stated in the plan (compiling the heading regex once and reusing it) is explicitly logged under plan.md's `## Deviations` with a justification that it doesn't change recognition rules. Deferred scope (pre-heading text, semantic chunker internals) is stated in both plan.md and the PR description. No unrelated edits.
+
+**observable-tests — pass.** test_evidence.md shows the exact issue repro re-run before (`headingless_chunks: 0`) and after (`headingless_chunks: 1`) on the committed head `8cac1b1`, plus the heading control staying at 1 both times. It includes the before-state XFAIL of the real regression, the after-state full pass, the complete `make test-unit` (378 passed), `make lint`, `make typecheck`, `black --check`, and frontend test/build output, plus an honest, explicit disclosure that `make test-integration` collects zero tests (expected per the assignment, box correctly left unticked).
+
+**reviewable-diff — pass.** The diff is two files, tightly scoped to the fix and its tests; no debug prints, no commented-out code, no stray files, no unrelated refactors. `current_level`/`noqa` lines were deliberately left untouched, as documented.
+
+**faithful-claims — pass.** Every ticked box is backed by test_evidence.md's concrete output (unit tests, lint, typecheck, xfail removal). The only unticked boxes (CI, integration) are honestly explained rather than hidden or falsely claimed. The description makes no claim of CI success — it explicitly states CI "has not run before this PR is opened." Live GitHub status on the exact PR head (`8cac1b1`) now shows all six jobs (`lint`, `eval`, `typecheck`, `test-unit`, `test-integration`, `frontend`) as `SUCCESS`, consistent with — not contradicting — the as-opened claims.
+
+**stated-standards — pass.** Every PR-template section is filled (Summary, Issue: `Closes #56`, Changes, Testing, Screenshots: justified N/A, Notes for Reviewers). AI-use disclosure is explicit and specific ("I used Hermes Agent to help inspect the chunker, develop the implementation and tests, run the commands..."). The seeded-bug `xfail` marker for #56 was removed per CONTRIBUTING.md's explicit instruction, with no matching `pyproject.toml` suppression to remove. Branch name `fix/56-headingless-documents` matches the required `<type>/<issue-number>-<slug>` convention. CONTRIBUTING.md's "CI must be green" requirement is satisfied in fact — live GitHub reports all jobs green on this exact head commit — and the rubric's live-mode carve-out ("pre-opening CI may remain unticked") covers the as-opened checkbox state.
+
+**clear-summary — pass (preferred).** Title and description name the exact behavior ("preserve fully headingless documents"), the function path, and the fix mechanism in plain, specific language without generic praise.
+
+## Verdict
+
+All five required checks pass; the preferred check also passes. **Accept.**
+
+```json
+{
+  "item": "https://github.com/codepath/pathreview-ai301-fa26-s3/pull/131",
+  "checks": [
+    {"name": "plan-fidelity", "grade": "pass", "evidence": "Diff touches only the two planned files; the one deviation (compiling the heading regex once) is logged under plan.md's Deviations as non-scope-changing."},
+    {"name": "observable-tests", "grade": "pass", "evidence": "test_evidence.md shows the exact repro before (headingless_chunks: 0) and after (headingless_chunks: 1) on commit 8cac1b1, plus full make test-unit/lint/typecheck/frontend output and an honest make test-integration limitation."},
+    {"name": "reviewable-diff", "grade": "pass", "evidence": "git diff main...HEAD stat shows only 2 files, 48 insertions/8 deletions, no debug lines or unrelated churn."},
+    {"name": "faithful-claims", "grade": "pass", "evidence": "All ticked Testing boxes are backed by test_evidence.md; the unticked CI/integration boxes are honestly explained, and live GitHub CI now reports all 6 jobs SUCCESS on PR head 8cac1b1, consistent with the as-opened claims."},
+    {"name": "stated-standards", "grade": "pass", "evidence": "PR template fully filled including AI disclosure ('I used Hermes Agent to help inspect the chunker...'), #56 xfail removed per CONTRIBUTING.md, branch name fix/56-headingless-documents matches convention, and live CI is green on all jobs."},
+    {"name": "clear-summary", "grade": "pass", "evidence": "Title and Summary name the exact function (_extract_sections()) and behavior (neutral headingless section) without generic claims."}
+  ],
+  "verdict": "accept"
+}
+```
