@@ -1,0 +1,170 @@
+[
+  {
+    "assignees": [],
+    "commentsCount": 0,
+    "isPullRequest": false,
+    "labels": [
+      {
+        "color": "d73a4a",
+        "description": "Something isn't working",
+        "id": "LA_kwDOUSEoq88AAAAC0WzsOw",
+        "name": "bug"
+      }
+    ],
+    "repository": {
+      "name": "Perma-Design-Kit",
+      "nameWithOwner": "tbdal/Perma-Design-Kit"
+    },
+    "state": "open",
+    "title": "Installierte iOS-App: Downloads (Backup, Debug-Datei, PDF, CSV \u2026) passieren stumm nicht",
+    "updatedAt": "2026-10-17T16:14:03Z",
+    "url": "https://github.com/tbdal/Perma-Design-Kit/issues/8",
+    "queries": [
+      "Q3"
+    ]
+  },
+  {
+    "assignees": [],
+    "commentsCount": 0,
+    "isPullRequest": false,
+    "labels": [
+      {
+        "color": "d73a4a",
+        "description": "Something isn't working",
+        "id": "LA_kwDOUBzDFM8AAAACxzFW1A",
+        "name": "bug"
+      },
+      {
+        "color": "0e5ca2",
+        "description": "",
+        "id": "LA_kwDOUBzDFM8AAAACxzR6aA",
+        "name": "ai"
+      },
+      {
+        "color": "ededed",
+        "description": "",
+        "id": "LA_kwDOUBzDFM8AAAACxzR_UQ",
+        "name": "agent-os"
+      }
+    ],
+    "repository": {
+      "name": "neo-agent-brain",
+      "nameWithOwner": "neomjs/neo-agent-brain"
+    },
+    "state": "open",
+    "title": "A Fleet Manager relaunch under running seats blocks new tool connections",
+    "updatedAt": "2026-10-17T16:11:53Z",
+    "url": "https://github.com/neomjs/neo-agent-brain/issues/1078",
+    "queries": [
+      "Q4"
+    ]
+  },
+  {
+    "assignees": [],
+    "commentsCount": 0,
+    "isPullRequest": false,
+    "labels": [
+      {
+        "color": "d73a4a",
+        "description": "Something isn't working",
+        "id": "LA_kwDOR7n9z88AAAACeVasVA",
+        "name": "bug"
+      }
+    ],
+    "repository": {
+      "name": "claude-gateway",
+      "nameWithOwner": "0xMaxMa/claude-gateway"
+    },
+    "state": "open",
+    "title": "[Bug] reconfigure recomputes agentDeclaration from app.yaml but never persists it back to apps.json",
+    "updatedAt": "2026-10-17T15:54:49Z",
+    "url": "https://github.com/0xMaxMa/claude-gateway/issues/615",
+    "queries": [
+      "Q3"
+    ]
+  },
+  {
+    "assignees": [],
+    "commentsCount": 0,
+    "isPullRequest": false,
+    "labels": [
+      {
+        "color": "d73a49",
+        "description": "Something isn't working",
+        "id": "LA_kwDOR2Oen88AAAACdkDoZQ",
+        "name": "bug"
+      },
+      {
+        "color": "0075ca",
+        "description": "Improvements or additions to documentation",
+        "id": "LA_kwDOR2Oen88AAAACdkDocw",
+        "name": "documentation"
+      },
+      {
+        "color": "d93f0b",
+        "description": "Next releases: wrong output in shipped commands, or measurement that gates decisions",
+        "id": "LA_kwDOR2Oen88AAAAC6tzelQ",
+        "name": "P1"
+      }
+    ],
+    "repository": {
+      "name": "sigmap",
+      "nameWithOwner": "manojmallick/sigmap"
+    },
+    "state": "open",
+    "title": "docs: the comparison page misstates RepoMix and omits the tools users actually compare against",
+    "updatedAt": "2026-10-17T15:33:57Z",
+    "url": "https://github.com/manojmallick/sigmap/issues/973",
+    "queries": [
+      "Q4"
+    ]
+  },
+  {
+    "assignees": [],
+    "commentsCount": 0,
+    "isPullRequest": false,
+    "labels": [
+      {
+        "color": "FF6B80",
+        "description": "Something isn't working",
+        "id": "LA_kwDON91aY88AAAAB6DeeSQ",
+        "name": "bug"
+      },
+      {
+        "color": "93A5FF",
+        "description": "Issue specifically occurs on macOS",
+        "id": "LA_kwDON91aY88AAAAB6izDWw",
+        "name": "platform:macos"
+      },
+      {
+        "color": "ededed",
+        "description": "",
+        "id": "LA_kwDON91aY88AAAAB_pgkOQ",
+        "name": "area:cost"
+      },
+      {
+        "color": "ededed",
+        "description": "",
+        "id": "LA_kwDON91aY88AAAAB_5Fa3Q",
+        "name": "area:mcp"
+      },
+      {
+        "color": "ededed",
+        "description": "",
+        "id": "LA_kwDON91aY88AAAACXYInhw",
+        "name": "area:desktop"
+      }
+    ],
+    "repository": {
+      "name": "claude-code",
+      "nameWithOwner": "anthropics/claude-code"
+    },
+    "state": "open",
+    "title": "Desktop Code tab: the built-in ccd_turn tools (task list / end-of-turn box) count against plan limits and are missing from /usage attribution",
+    "updatedAt": "2026-10-17T15:17:30Z",
+    "url": "https://github.com/anthropics/claude-code/issues/103018",
+    "queries": [
+      "Q3"
+    ]
+  }
+]

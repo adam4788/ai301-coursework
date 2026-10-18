@@ -1,0 +1,30 @@
+[
+  {
+    "id": "Q1",
+    "command": "gh search issues --language TypeScript --label 'good first issue' --state open --limit 100 --archived=false --visibility public --sort updated --order desc --json title,repository,labels,assignees,commentsCount,updatedAt,url,state,isPullRequest",
+    "startedAt": "2026-10-17T16:20:42.078759+00:00",
+    "count": 100,
+    "exitCode": 0
+  },
+  {
+    "id": "Q2",
+    "command": "gh search issues --language JavaScript --label 'good first issue' --state open --limit 100 --archived=false --visibility public --sort updated --order desc --json title,repository,labels,assignees,commentsCount,updatedAt,url,state,isPullRequest",
+    "startedAt": "2026-10-17T16:20:44.101514+00:00",
+    "count": 100,
+    "exitCode": 0
+  },
+  {
+    "id": "Q3",
+    "command": "gh search issues json --language TypeScript --label bug --state open --limit 100 --archived=false --visibility public --sort updated --order desc --json title,repository,labels,assignees,commentsCount,updatedAt,url,state,isPullRequest",
+    "startedAt": "2026-10-17T16:20:46.181702+00:00",
+    "count": 100,
+    "exitCode": 0
+  },
+  {
+    "id": "Q4",
+    "command": "gh search issues document --language JavaScript --label bug --state open --limit 100 --archived=false --visibility public --sort updated --order desc --json title,repository,labels,assignees,commentsCount,updatedAt,url,state,isPullRequest",
+    "startedAt": "2026-10-17T16:20:48.633398+00:00",
+    "count": 100,
+    "exitCode": 0
+  }
+]

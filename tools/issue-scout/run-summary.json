@@ -1,0 +1,347 @@
+{
+  "date": "2026-10-17",
+  "account": "CodePath Student 2.0 enterprise subscription; tiny actual work inference returned OK before scan",
+  "ranking": {
+    "fetched": 400,
+    "unique": 396,
+    "duplicates": 4,
+    "dropped": 101,
+    "survivors": 295
+  },
+  "rubricModified": false,
+  "regressionEvalRun": false,
+  "scan": [
+    {
+      "item": "https://github.com/tbdal/Perma-Design-Kit/issues/8",
+      "checks": [
+        {
+          "name": "Maintainer engagement",
+          "grade": "pass",
+          "evidence": "Latest 5 default-branch commits all authored by human user tbdal, newest 426ebb6 at 2026-10-17T09:06:21Z; COLLABORATOR js32 replied in-thread the same day the issue opened (2026-10-17T16:24:09Z)."
+        },
+        {
+          "name": "Repository still maintained",
+          "grade": "pass",
+          "evidence": "Not archived; repo pushed_at 2026-10-17T09:06:23Z, well within 180 days (no release required once commit condition is met)."
+        },
+        {
+          "name": "Bounded, specified scope",
+          "grade": "pass",
+          "evidence": "Issue proposes one concrete fix (saveFile() helper for installed-PWA downloads) naming exact call sites and a unit-test criterion; not an umbrella issue or open design debate."
+        },
+        {
+          "name": "Unclaimed / no competing work",
+          "grade": "pass",
+          "evidence": "development.assignees=[] and closedByPullRequestsReferences=[] as of capture 2026-10-17T16:45:19Z; the sole comment is a root-cause confirmation, not a claim."
+        },
+        {
+          "name": "AI-assisted contributions permitted",
+          "grade": "pass",
+          "evidence": "Full repo tree inspected (treeReceiptSha256 db84260\u2026); README.md Contributing section (fetched 2026-10-17) states only fork/branch/PR steps with no AI restriction; no AI_POLICY/AGENTS ban file present."
+        },
+        {
+          "name": "Reproduction or validation starting point",
+          "grade": "pass",
+          "evidence": "Body gives exact repro steps (Settings \u2192 Backup herunterladen (JSON)) plus a confirmed working workaround (navigator.share) from the 2026-10-17T16:24:09Z comment."
+        }
+      ],
+      "verdict": "accept"
+    },
+    {
+      "item": "https://github.com/manojmallick/sigmap/issues/973",
+      "checks": [
+        {
+          "name": "Maintainer engagement",
+          "grade": "pass",
+          "evidence": "Latest 5 default-branch commits all authored by human user manojmallick, newest c7d9903 at 2026-10-17T09:06:24Z."
+        },
+        {
+          "name": "Repository still maintained",
+          "grade": "pass",
+          "evidence": "Not archived; release v8.78.0 published 2026-10-17T09:07:23Z (within 365 days)."
+        },
+        {
+          "name": "Bounded, specified scope",
+          "grade": "pass",
+          "evidence": "Issue targets one outcome (sourced, dated comparison-page claims) via a single acceptance-criteria checklist naming exact files (docs-vp/guide/compare-alternatives.md, README); multi-item checklist for one outcome does not fail scope per rubric."
+        },
+        {
+          "name": "Unclaimed / no competing work",
+          "grade": "pass",
+          "evidence": "development.assignees=[] and closedByPullRequestsReferences=[] as of capture; 0 comments, opened and labeled by OWNER manojmallick on 2026-10-17T10:26:35Z."
+        },
+        {
+          "name": "AI-assisted contributions permitted",
+          "grade": "pass",
+          "evidence": "CONTRIBUTING.md and AGENTS.md fetched and inspected (sha c34d596\u2026, 6b4fc26\u2026); neither states a ban on AI-generated contributions."
+        },
+        {
+          "name": "Reproduction or validation starting point",
+          "grade": "pass",
+          "evidence": "Acceptance criteria name exact doc rows to correct and require 'A test pins the date-and-source rule'."
+        }
+      ],
+      "verdict": "accept"
+    },
+    {
+      "item": "https://github.com/neomjs/neo-agent-brain/issues/1078",
+      "checks": [
+        {
+          "name": "Maintainer engagement",
+          "grade": "fail",
+          "evidence": "README.md (lines 78-85, fetched 2026-10-17) names commit/review identities as AI personas (e.g. neo-opus-grace = 'Grace, AI maintainer'); PR #1065 merged 2026-10-16T15:31:19Z was authored and reviewed only by neo-gemini-pro/neo-opus-grace; the 5-issue maintainerResponseSample (incl. #1077, #144) shows firstMaintainerReply:null for every sampled thread."
+        },
+        {
+          "name": "Repository still maintained",
+          "grade": "pass",
+          "evidence": "Not archived; default branch (dev) pushed 2026-10-17T01:51:24Z, within 180 days."
+        },
+        {
+          "name": "Bounded, specified scope",
+          "grade": "unclear",
+          "evidence": "Body is an internal 'Institution/Fleet lifecycle' continuity ticket requiring cross-reference to prior ADRs, Decision Records and sibling tickets (#1074, #674, #964) with no single settled design named as final."
+        },
+        {
+          "name": "Unclaimed / no competing work",
+          "grade": "pass",
+          "evidence": "development.assignees=[] and closedByPullRequestsReferences=[] as of capture 2026-10-17T16:45:19Z; 0 comments on the issue."
+        },
+        {
+          "name": "AI-assisted contributions permitted",
+          "grade": "pass",
+          "evidence": "Full tree inspected (treeReceiptSha256 e301fee\u2026); README mentions only 'cross-family review before merge', no ban on AI-assisted work."
+        },
+        {
+          "name": "Reproduction or validation starting point",
+          "grade": "unclear",
+          "evidence": "Acceptance criteria (AC-1\u2026AC-4) describe internal unit-test shapes for files only this project's own agents have working context on; no external-reproducible repro given."
+        }
+      ],
+      "verdict": "reject"
+    },
+    {
+      "item": "https://github.com/0xMaxMa/claude-gateway/issues/615",
+      "checks": [
+        {
+          "name": "Maintainer engagement",
+          "grade": "pass",
+          "evidence": "Latest 5 default-branch commits authored by human user 0xMaxMa, newest c6e867b at 2026-10-17T08:00:07Z."
+        },
+        {
+          "name": "Repository still maintained",
+          "grade": "pass",
+          "evidence": "Not archived; release v2.1.2 published 2026-10-17T08:05:38Z."
+        },
+        {
+          "name": "Bounded, specified scope",
+          "grade": "pass",
+          "evidence": "Body pinpoints exact lines (installer.ts:2471-2482, :2537) and a required regression test in tests/unit/apps/installer.test.ts."
+        },
+        {
+          "name": "Unclaimed / no competing work",
+          "grade": "fail",
+          "evidence": "development.closedByPullRequestsReferences lists PR #617 (state OPEN, merged_at null), created 2026-10-17T16:11:26Z, explicitly 'Closes #615' \u2014 an open implementation PR already exists."
+        },
+        {
+          "name": "AI-assisted contributions permitted",
+          "grade": "pass",
+          "evidence": "website/reference/development.md fetched (sha 5ef622d\u2026) has no AI-contribution restriction; no dedicated AI policy file found in the inspected tree."
+        },
+        {
+          "name": "Reproduction or validation starting point",
+          "grade": "pass",
+          "evidence": "AC specifies exact reconfigure() regression test steps (toggle disable_archive, assert registry.get(appName).agentDeclaration)."
+        }
+      ],
+      "verdict": "reject"
+    },
+    {
+      "item": "https://github.com/anthropics/claude-code/issues/103018",
+      "checks": [
+        {
+          "name": "Maintainer engagement",
+          "grade": "fail",
+          "evidence": "Latest 5 default-branch commits (newest c017428c, 2026-10-16T20:52:45Z) are all 'chore: Update CHANGELOG.md and feed.xml' / 'Update mods/' commits authored by GitHub Actions/actions-user with no attached PR (automatedCommitPRReviewEvidence returns [] for all 5); maintainerResponseSample across 5 issues (incl. #28300, #102142) shows firstMaintainerReply:null for every thread."
+        },
+        {
+          "name": "Repository still maintained",
+          "grade": "pass",
+          "evidence": "Not archived; release v2.1.302 published 2026-10-16T20:53:06Z."
+        },
+        {
+          "name": "Bounded, specified scope",
+          "grade": "fail",
+          "evidence": "Body ends in an open policy question ('Is it intended that requests... count against plan limits? If yes... if no, this looks like a bug') rather than one settled, testable target behavior."
+        },
+        {
+          "name": "Unclaimed / no competing work",
+          "grade": "pass",
+          "evidence": "development.assignees=[] and closedByPullRequestsReferences=[] as of capture 2026-10-17T16:45:19Z."
+        },
+        {
+          "name": "AI-assisted contributions permitted",
+          "grade": "pass",
+          "evidence": "Full tree inspected (treeReceiptSha256 9c6138d\u2026); README.md (fetched 2026-10-17) states a data/privacy policy but no ban on AI-assisted contributions."
+        },
+        {
+          "name": "Reproduction or validation starting point",
+          "grade": "unclear",
+          "evidence": "Methodology relies on the reporter's own private ~/.claude/projects transcripts and undisclosed internal metering code, not reproducible by an external contributor from the public repo alone."
+        }
+      ],
+      "verdict": "reject"
+    }
+  ],
+  "direct": [
+    {
+      "item": "https://github.com/Logixia/logixia/issues/120",
+      "checks": [
+        {
+          "name": "Maintainer engagement",
+          "grade": "pass",
+          "evidence": "commits.json: human-authored, PGP-verified commit by webcoderspeed on 2026-10-09 (8 days before scan date 2026-10-17)"
+        },
+        {
+          "name": "Repository still maintained",
+          "grade": "pass",
+          "evidence": "repository.json archived:false; latest-release.json shows v1.12.5 published 2026-10-09 (within 365 days)"
+        },
+        {
+          "name": "Bounded, specified scope",
+          "grade": "pass",
+          "evidence": "issue.json body: exact file/line (src/browser.ts:391), verified before/after behavior, named test file src/__tests__/browser.test.ts, and acceptance criteria (npx jest ..., typecheck, lint); the 'decide on context' bullet names its own resolution in the same sentence"
+        },
+        {
+          "name": "Unclaimed / no competing work",
+          "grade": "pass",
+          "evidence": "issue.json: assignees:[], comments:0; development-gh-view.json: closedByPullRequestsReferences:[]; pr-search.json: total_count 0; open-pulls.json (16 entries) contains no PR referencing browser.ts/child()/#120"
+        },
+        {
+          "name": "AI-assisted contributions permitted",
+          "grade": "pass",
+          "evidence": "policy-files/CONTRIBUTING.md, .github/pull_request_template.md, and CODE_OF_CONDUCT.md contain no AI-contribution ban or restriction"
+        },
+        {
+          "name": "Reproduction or validation starting point",
+          "grade": "pass",
+          "evidence": "issue.json body: 'Verified: parent console transport has json: true, child has json: false' plus named test command npx jest src/__tests__/browser.test.ts"
+        }
+      ],
+      "verdict": "accept"
+    },
+    {
+      "item": "https://github.com/Nano-Collective/nanocoder/issues/1631",
+      "checks": [
+        {
+          "name": "Maintainer engagement",
+          "grade": "pass",
+          "evidence": "commits.json: human-signed commit by yetuge merging PR #1421 on 2026-10-17 (scan date)"
+        },
+        {
+          "name": "Repository still maintained",
+          "grade": "pass",
+          "evidence": "repository.json archived:false; latest-release.json v1.31.0 published 2026-09-26 (within 365 days)"
+        },
+        {
+          "name": "Bounded, specified scope",
+          "grade": "pass",
+          "evidence": "issue.json body: single function (XMLToolCallParser.parseToolCalls), explicit repro steps, expected vs actual behavior"
+        },
+        {
+          "name": "Unclaimed / no competing work",
+          "grade": "fail",
+          "evidence": "comments.json: ducanhnguyen223 posted a detailed claim-with-plan on 2026-10-08 ('I'd like to take this...'), 9 days before scan date, never withdrawn; only reply was a procedural hold ('don't raise PR without getting the issue assigned'), not a withdrawal or new-taker invitation"
+        },
+        {
+          "name": "AI-assisted contributions permitted",
+          "grade": "pass",
+          "evidence": "policy-files/CONTRIBUTING.md and pull_request_template.md contain no AI ban; AGENTS.md/CLAUDE.md are agent-instruction files, not restrictions"
+        },
+        {
+          "name": "Reproduction or validation starting point",
+          "grade": "pass",
+          "evidence": "issue.json body gives a minimal fenced-code-then-tool-call repro and exact expected/actual output"
+        }
+      ],
+      "verdict": "reject"
+    },
+    {
+      "item": "https://github.com/Nano-Collective/nanocoder/issues/1633",
+      "checks": [
+        {
+          "name": "Maintainer engagement",
+          "grade": "pass",
+          "evidence": "commits.json: human-signed commit by yetuge merging PR #1421 on 2026-10-17 (scan date)"
+        },
+        {
+          "name": "Repository still maintained",
+          "grade": "pass",
+          "evidence": "repository.json archived:false; latest-release.json v1.31.0 published 2026-09-26 (within 365 days)"
+        },
+        {
+          "name": "Bounded, specified scope",
+          "grade": "pass",
+          "evidence": "issue.json body: single function (compressToolResultDefault/isSuccess), explicit repro steps, concrete expected vs actual output"
+        },
+        {
+          "name": "Unclaimed / no competing work",
+          "grade": "fail",
+          "evidence": "development-gh-view.json: gh issue view shows assignee Vishesh-Verma-07 (assigned 2026-10-16) AND closedByPullRequestsReferences lists PR #1645; pulls/1645/pull.json confirms state:open, merged_at:null, body 'Closes #1633'"
+        },
+        {
+          "name": "AI-assisted contributions permitted",
+          "grade": "pass",
+          "evidence": "policy-files/CONTRIBUTING.md and pull_request_template.md contain no AI ban; AGENTS.md/CLAUDE.md are agent-instruction files, not restrictions"
+        },
+        {
+          "name": "Reproduction or validation starting point",
+          "grade": "pass",
+          "evidence": "issue.json body gives exact repro conditions (multi-line log with 'completed successfully' and a failure line) and the exact wrong output produced"
+        }
+      ],
+      "verdict": "reject"
+    }
+  ],
+  "claudeExecutions": [
+    {
+      "kind": "scan",
+      "startedAt": "2026-10-17T09:35:41.302508-07:00",
+      "endedAt": "2026-10-17T09:41:27.636610-07:00",
+      "processExitCode": 1,
+      "subtype": "error_max_budget_usd",
+      "is_error": true,
+      "reportedListPriceUsd": 3.096822800000001,
+      "actualBilledChargeVerified": false,
+      "models": [
+        "claude-sonnet-5"
+      ]
+    },
+    {
+      "kind": "scan-final",
+      "startedAt": "2026-10-17T09:46:48.088313-07:00",
+      "endedAt": "2026-10-17T09:49:14.567336-07:00",
+      "processExitCode": 0,
+      "subtype": "success",
+      "is_error": false,
+      "reportedListPriceUsd": 0.4842682,
+      "actualBilledChargeVerified": false,
+      "models": [
+        "claude-sonnet-5"
+      ]
+    },
+    {
+      "kind": "direct",
+      "startedAt": "2026-10-17T09:37:57.017518-07:00",
+      "endedAt": "2026-10-17T09:40:57.321794-07:00",
+      "processExitCode": 0,
+      "subtype": "success",
+      "is_error": false,
+      "reportedListPriceUsd": 1.2146646,
+      "actualBilledChargeVerified": false,
+      "models": [
+        "claude-sonnet-5"
+      ]
+    }
+  ],
+  "totalReportedListPriceUsd": 4.7957556
+}

@@ -55,10 +55,9 @@ happened; these entries are the toolkit's own timeline.
 All four entries are graded. Keep every heading below, and fill each
 one in the week it belongs to.
 
-**Unit 5: [one line on the tool work]**
+**Unit 5: issue-scout migration, reproducible search, and live candidate grading**
 
-[2-4 sentences: what you built (the scout, your strategy), what broke
-or fell short, what changed because of it.]
+2026-10-17 — Migrated the Unit 1 skill to `issue-scout`, preserving the complete backup, rubric, evidence guide, and original fit-profile paragraph, then authored four TypeScript/JavaScript queries grounded in the documented web/document project history and tested deterministic URL dedupe and metadata-only ranking. The executed queries returned 400 records, 396 unique issues, and 295 survivors; real CodePath-work Claude grading of the exact top five produced two accepts and three rejects, with the complete read-out saved in [scan-output.md](../tools/issue-scout/scan-output.md). A separate direct run on three issues from the course Issue Selection site accepted [Logixia #120](https://github.com/Logixia/logixia/issues/120), rejected [nanocoder #1631](https://github.com/Nano-Collective/nanocoder/issues/1631) for a recent unwithdrawn claim, and rejected [nanocoder #1633](https://github.com/Nano-Collective/nanocoder/issues/1633) for an assignee and open PR; these are graded candidates, not a final issue choice or claim. The work OAuth session had expired and the first tool-driven scan hit its budget guard, so the work subscription was restored and tested before grading, the failed attempt was retained, and the same top five were completed using compact source-hashed live evidence; the actual failures, fixes, and the broad ranking's specialist/closed-source false leads are recorded in [dated scan notes](../tools/issue-scout/scan-notes.md).
 
 **Unit 6: [one line on the tool work]**
 
