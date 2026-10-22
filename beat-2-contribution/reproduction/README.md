@@ -1,5 +1,7 @@
 # Initial reproduction: missing service icons and missing validation
 
+**Historical initial report.** Browser reproduction and controlled baseline checks were subsequently completed: see [the follow-up with real screenshots and measurements](visual/README.md). The limits below describe the first attempt, not the latest state.
+
 Issue: https://github.com/betterlaspinas/betterlaspinas/issues/274
 
 Claim/request for assignment: https://github.com/betterlaspinas/betterlaspinas/issues/274#issuecomment-6330461055

@@ -1,0 +1,11 @@
+{
+  "before": {
+    "hydrated": true,
+    "closeIcon": true
+  },
+  "after": {
+    "menuIcon": true,
+    "closeIcon": false
+  },
+  "url": "http://127.0.0.1:3106/"
+}

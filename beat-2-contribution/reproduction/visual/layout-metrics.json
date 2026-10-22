@@ -1,0 +1,350 @@
+[
+  {
+    "url": "http://127.0.0.1:3106/services/business",
+    "viewport": {
+      "width": 1280,
+      "height": 900
+    },
+    "scrollWidth": 1280,
+    "cards": [
+      {
+        "title": "Business Permit (New)",
+        "iconClass": "bi text-primary-600",
+        "iconWidth": 0,
+        "iconContent": "none",
+        "gap": "8px",
+        "headingLeft": 65,
+        "textLeft": 73,
+        "leadingOffset": 8
+      },
+      {
+        "title": "Business Permit Renewal",
+        "iconClass": "bi text-primary-600",
+        "iconWidth": 0,
+        "iconContent": "none",
+        "gap": "8px",
+        "headingLeft": 473,
+        "textLeft": 481,
+        "leadingOffset": 8
+      },
+      {
+        "title": "Special Permit",
+        "iconClass": "bi text-primary-600",
+        "iconWidth": 0,
+        "iconContent": "none",
+        "gap": "8px",
+        "headingLeft": 881,
+        "textLeft": 889,
+        "leadingOffset": 8
+      },
+      {
+        "title": "Certificates on Status of Business",
+        "iconClass": "bi text-primary-600",
+        "iconWidth": 0,
+        "iconContent": "none",
+        "gap": "8px",
+        "headingLeft": 65,
+        "textLeft": 73,
+        "leadingOffset": 8
+      },
+      {
+        "title": "Certified True Copy of Business License and Mayor's Permit",
+        "iconClass": "bi text-primary-600",
+        "iconWidth": 0,
+        "iconContent": "none",
+        "gap": "8px",
+        "headingLeft": 473,
+        "textLeft": 481,
+        "leadingOffset": 8
+      },
+      {
+        "title": "Occupational Mayor's Permit (Regular)",
+        "iconClass": "bi text-primary-600",
+        "iconWidth": 0,
+        "iconContent": "none",
+        "gap": "8px",
+        "headingLeft": 881,
+        "textLeft": 889,
+        "leadingOffset": 8
+      },
+      {
+        "title": "Occupational Mayor's Permit (First Time Job Seeker)",
+        "iconClass": "bi text-primary-600",
+        "iconWidth": 0,
+        "iconContent": "none",
+        "gap": "8px",
+        "headingLeft": 65,
+        "textLeft": 73,
+        "leadingOffset": 8
+      },
+      {
+        "title": "Safety Seal Certificate",
+        "iconClass": "bi text-primary-600",
+        "iconWidth": 0,
+        "iconContent": "none",
+        "gap": "8px",
+        "headingLeft": 473,
+        "textLeft": 481,
+        "leadingOffset": 8
+      }
+    ],
+    "label": "business-desktop",
+    "screenshot": "business-desktop.png"
+  },
+  {
+    "url": "http://127.0.0.1:3106/services/certificates",
+    "viewport": {
+      "width": 1280,
+      "height": 900
+    },
+    "scrollWidth": 1280,
+    "cards": [
+      {
+        "title": "Birth Certificate",
+        "iconClass": "bi text-primary-600 bi-file-earmark-text",
+        "iconWidth": 18,
+        "iconContent": "\"\uf38b\"",
+        "gap": "8px",
+        "headingLeft": 65,
+        "textLeft": 91,
+        "leadingOffset": 26
+      },
+      {
+        "title": "Marriage Certificate",
+        "iconClass": "bi text-primary-600 bi-heart",
+        "iconWidth": 18,
+        "iconContent": "\"\uf417\"",
+        "gap": "8px",
+        "headingLeft": 473,
+        "textLeft": 499,
+        "leadingOffset": 26
+      },
+      {
+        "title": "Death Certificate",
+        "iconClass": "bi text-primary-600 bi-file-earmark-x",
+        "iconWidth": 18,
+        "iconContent": "\"\uf38f\"",
+        "gap": "8px",
+        "headingLeft": 881,
+        "textLeft": 907,
+        "leadingOffset": 26
+      },
+      {
+        "title": "Barangay Clearance",
+        "iconClass": "bi-house-check bi text-primary-600",
+        "iconWidth": 18,
+        "iconContent": "\"\uf889\"",
+        "gap": "8px",
+        "headingLeft": 65,
+        "textLeft": 91,
+        "leadingOffset": 26
+      },
+      {
+        "title": "Barangay ID",
+        "iconClass": "bi-person-badge bi text-primary-600",
+        "iconWidth": 18,
+        "iconContent": "\"\uf4d3\"",
+        "gap": "8px",
+        "headingLeft": 473,
+        "textLeft": 499,
+        "leadingOffset": 26
+      },
+      {
+        "title": "National Police Clearance",
+        "iconClass": "bi text-primary-600 bi-shield-check",
+        "iconWidth": 18,
+        "iconContent": "\"\uf52f\"",
+        "gap": "8px",
+        "headingLeft": 881,
+        "textLeft": 907,
+        "leadingOffset": 26
+      }
+    ],
+    "label": "certificates-desktop",
+    "screenshot": "certificates-desktop.png"
+  },
+  {
+    "url": "http://127.0.0.1:3106/services/business",
+    "viewport": {
+      "width": 390,
+      "height": 900
+    },
+    "scrollWidth": 390,
+    "cards": [
+      {
+        "title": "Business Permit (New)",
+        "iconClass": "bi text-primary-600",
+        "iconWidth": 0,
+        "iconContent": "none",
+        "gap": "8px",
+        "headingLeft": 41,
+        "textLeft": 49,
+        "leadingOffset": 8
+      },
+      {
+        "title": "Business Permit Renewal",
+        "iconClass": "bi text-primary-600",
+        "iconWidth": 0,
+        "iconContent": "none",
+        "gap": "8px",
+        "headingLeft": 41,
+        "textLeft": 49,
+        "leadingOffset": 8
+      },
+      {
+        "title": "Special Permit",
+        "iconClass": "bi text-primary-600",
+        "iconWidth": 0,
+        "iconContent": "none",
+        "gap": "8px",
+        "headingLeft": 41,
+        "textLeft": 49,
+        "leadingOffset": 8
+      },
+      {
+        "title": "Certificates on Status of Business",
+        "iconClass": "bi text-primary-600",
+        "iconWidth": 0,
+        "iconContent": "none",
+        "gap": "8px",
+        "headingLeft": 41,
+        "textLeft": 49,
+        "leadingOffset": 8
+      },
+      {
+        "title": "Certified True Copy of Business License and Mayor's Permit",
+        "iconClass": "bi text-primary-600",
+        "iconWidth": 0,
+        "iconContent": "none",
+        "gap": "8px",
+        "headingLeft": 41,
+        "textLeft": 49,
+        "leadingOffset": 8
+      },
+      {
+        "title": "Occupational Mayor's Permit (Regular)",
+        "iconClass": "bi text-primary-600",
+        "iconWidth": 0,
+        "iconContent": "none",
+        "gap": "8px",
+        "headingLeft": 41,
+        "textLeft": 49,
+        "leadingOffset": 8
+      },
+      {
+        "title": "Occupational Mayor's Permit (First Time Job Seeker)",
+        "iconClass": "bi text-primary-600",
+        "iconWidth": 0,
+        "iconContent": "none",
+        "gap": "8px",
+        "headingLeft": 41,
+        "textLeft": 49,
+        "leadingOffset": 8
+      },
+      {
+        "title": "Safety Seal Certificate",
+        "iconClass": "bi text-primary-600",
+        "iconWidth": 0,
+        "iconContent": "none",
+        "gap": "8px",
+        "headingLeft": 41,
+        "textLeft": 49,
+        "leadingOffset": 8
+      }
+    ],
+    "label": "business-mobile",
+    "screenshot": "business-mobile.png"
+  },
+  {
+    "url": "http://127.0.0.1:3106/services/business",
+    "viewport": {
+      "width": 320,
+      "height": 900
+    },
+    "scrollWidth": 320,
+    "cards": [
+      {
+        "title": "Business Permit (New)",
+        "iconClass": "bi text-primary-600",
+        "iconWidth": 0,
+        "iconContent": "none",
+        "gap": "8px",
+        "headingLeft": 41,
+        "textLeft": 49,
+        "leadingOffset": 8
+      },
+      {
+        "title": "Business Permit Renewal",
+        "iconClass": "bi text-primary-600",
+        "iconWidth": 0,
+        "iconContent": "none",
+        "gap": "8px",
+        "headingLeft": 41,
+        "textLeft": 49,
+        "leadingOffset": 8
+      },
+      {
+        "title": "Special Permit",
+        "iconClass": "bi text-primary-600",
+        "iconWidth": 0,
+        "iconContent": "none",
+        "gap": "8px",
+        "headingLeft": 41,
+        "textLeft": 49,
+        "leadingOffset": 8
+      },
+      {
+        "title": "Certificates on Status of Business",
+        "iconClass": "bi text-primary-600",
+        "iconWidth": 0,
+        "iconContent": "none",
+        "gap": "8px",
+        "headingLeft": 41,
+        "textLeft": 49,
+        "leadingOffset": 8
+      },
+      {
+        "title": "Certified True Copy of Business License and Mayor's Permit",
+        "iconClass": "bi text-primary-600",
+        "iconWidth": 0,
+        "iconContent": "none",
+        "gap": "8px",
+        "headingLeft": 41,
+        "textLeft": 49,
+        "leadingOffset": 8
+      },
+      {
+        "title": "Occupational Mayor's Permit (Regular)",
+        "iconClass": "bi text-primary-600",
+        "iconWidth": 0,
+        "iconContent": "none",
+        "gap": "8px",
+        "headingLeft": 41,
+        "textLeft": 49,
+        "leadingOffset": 8
+      },
+      {
+        "title": "Occupational Mayor's Permit (First Time Job Seeker)",
+        "iconClass": "bi text-primary-600",
+        "iconWidth": 0,
+        "iconContent": "none",
+        "gap": "8px",
+        "headingLeft": 41,
+        "textLeft": 49,
+        "leadingOffset": 8
+      },
+      {
+        "title": "Safety Seal Certificate",
+        "iconClass": "bi text-primary-600",
+        "iconWidth": 0,
+        "iconContent": "none",
+        "gap": "8px",
+        "headingLeft": 41,
+        "textLeft": 49,
+        "leadingOffset": 8
+      }
+    ],
+    "label": "business-narrow",
+    "screenshot": "business-narrow.png"
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "url": "http://127.0.0.1:3106/",
+  "heading": "Popular Services",
+  "icons": [
+    {
+      "class": "bi bi-file-earmark-text-fill",
+      "content": "\"\uf38a\""
+    },
+    {
+      "class": "bi bi-arrow-right transition-all duration-200 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 text-gray-400",
+      "content": "\"\uf138\""
+    },
+    {
+      "class": "bi bi-shop",
+      "content": "\"\uf543\""
+    },
+    {
+      "class": "bi bi-arrow-right transition-all duration-200 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 text-gray-400",
+      "content": "\"\uf138\""
+    },
+    {
+      "class": "bi bi-grid-fill",
+      "content": "\"\uf3fb\""
+    },
+    {
+      "class": "bi bi-arrow-right transition-all duration-200 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 text-white",
+      "content": "\"\uf138\""
+    }
+  ]
+}

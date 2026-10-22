@@ -60,7 +60,7 @@ one in the week it belongs to.
 
 **Unit 6: voice guard, shared repo memory, fresh grading, and initial reproduction**
 
-2026-10-21 — Installed the staff voice guard, preserved all prior rules in one shared guide, updated the real-repository scopes, and verified clean-draft PASS, unsupported-result STOP, and actual Claude Code hook blocking; the Upstream examples are explicitly AI-assisted drafts pending my personal review. Fresh scouting rejected three occupied Logixia candidates and accepted two replacement site picks, after which I explicitly chose [Better Las Piñas #274](https://github.com/betterlaspinas/betterlaspinas/issues/274), reserved it on the course site, and approved the [posted claim/request for assignment](https://github.com/betterlaspinas/betterlaspinas/issues/274#issuecomment-6330461055). A broad troubleshooting rule initially blocked a legitimate scope question, so the guide was clarified to distinguish troubleshooting from assignment/scope requests while still blocking invented test results; stale candidates, an overstrict local JSON validator, and two unsuccessful Claude posting attempts were preserved rather than presented as successes. One scoped orientation was distilled into a locally excluded `CLAUDE.local.md`, and the unmodified checkout produced [initial data/schema reproduction evidence](reproduction/README.md): one positive control passed and three icon-contract assertions failed, with visual reproduction, full application checks, maintainer approval, and my personal reflection still pending.
+2026-10-21 — Installed the staff voice guard, preserved all prior rules in one shared guide, updated the real-repository scopes, and verified clean-draft PASS, unsupported-result STOP, and actual Claude Code hook blocking; the Upstream examples are explicitly AI-assisted drafts pending my personal review. Fresh scouting rejected three occupied Logixia candidates and accepted two replacement site picks, after which I explicitly chose [Better Las Piñas #274](https://github.com/betterlaspinas/betterlaspinas/issues/274), reserved it on the course site, and approved the [posted claim/request for assignment](https://github.com/betterlaspinas/betterlaspinas/issues/274#issuecomment-6330461055). A broad troubleshooting rule initially blocked a legitimate scope question, so the guide was clarified to distinguish troubleshooting from assignment/scope requests while still blocking invented test results; stale candidates, an overstrict local JSON validator, and two unsuccessful Claude posting attempts were preserved rather than presented as successes. One scoped orientation was distilled into a locally excluded `CLAUDE.local.md`, the unmodified checkout produced [initial data/schema evidence](reproduction/README.md) with one positive control passing and three contract assertions failing, and a [browser/baseline follow-up](reproduction/visual/README.md) confirmed eight empty-icon headings with an 8 px gap while lint, typecheck, build, and all 299 baseline tests passed under the recorded environment; maintainer approval and my personal reflection remain pending.
 
 **Unit 7: [one line on the tool work]**
 
@@ -105,7 +105,7 @@ Every canonical service should have a meaningful, non-empty Bootstrap icon; omis
 
 **Current Behavior**
 
-At tested upstream revision `7fffa3961785b1b04dd27252650c4c811d22ad5a`, 39 of 45 services omit `icon`; the baseline config check still passes, and the real validator accepts both omitted and empty icon values. The browser spacing symptom has not yet been locally measured.
+At tested upstream revision `7fffa3961785b1b04dd27252650c4c811d22ad5a`, 39 of 45 services omit `icon`; the baseline config check still passes, and the real validator accepts both omitted and empty icon values. The production-built browser page now confirms all eight Business card headings have zero-width icons but an 8 px gap; the six Certificates cards provide real-glyph controls, with screenshots and DOM geometry saved in the [follow-up report](reproduction/visual/README.md).
 
 **Affected Components**
 
@@ -124,27 +124,29 @@ At tested upstream revision `7fffa3961785b1b04dd27252650c4c811d22ad5a`, 39 of 45
 
 **Environment Setup**
 
-macOS 27.0.1 ARM64, Node v26.7.0, project 1.2.0 at upstream `7fffa3961785b1b04dd27252650c4c811d22ad5a`. The project declares `pnpm@10.29.2`, but pnpm was absent locally; no dependency install/full app startup was performed. The dependency-free actual validator was run directly with Node, and the external harness imports that exact upstream implementation. Complete rerun commands and limitations are in [reproduction/README.md](reproduction/README.md).
+macOS 27.0.1 ARM64, Node v26.7.0, project 1.2.0 at unmodified upstream `7fffa3961785b1b04dd27252650c4c811d22ad5a`. Initially pnpm was absent and only the dependency-free actual validator was run; subsequently pinned pnpm 10.29.2 installed the frozen lockfile through a registry mirror after the normal registry timed out. Tests require `TZ=UTC` and `NODE_OPTIONS=--no-experimental-webstorage` on this host; the production build also uses `NUXT_SITE_URL=https://betterlaspinas.org` from `.env.example`. Full commands, failed controls, actual baseline results, screenshots, and limits are in [the browser follow-up](reproduction/visual/README.md); [the initial report](reproduction/README.md) is preserved as history.
 
 **Steps to Reproduce**
 
 1. Clone upstream separately and check out `7fffa3961785b1b04dd27252650c4c811d22ad5a`; leave its source unchanged.
 2. Run `node scripts/validate-config.mjs` from that checkout: actual exit 0 despite missing catalog icons.
 3. Set `ICON_REPRO_REPO` to that checkout and run the coursework [icon-contract.test.mjs](reproduction/icon-contract.test.mjs) using `node --test`: actual exit 1, one positive control passes and three desired-contract assertions fail.
-4. Preserve this as partial data/schema reproduction; do not describe it as visual confirmation or a completed fix.
+4. Preserve that first run as partial data/schema reproduction, not a fixed issue.
+5. Install the frozen dependencies, run the existing baseline scripts with the recorded host environment, build production, then inspect Business and Certificates pages in a local Chrome session at 1280, 390, and 320 px as documented in [the follow-up](reproduction/visual/README.md).
+6. Record real icon glyphs, zero-width missing icons, computed gap, and title offsets without DOM changes; stop the server after screenshots/measurements. Baseline suite success is not a fix for the still-RED issue contract.
 
 **Reproduction Evidence**
 
 - **Commit showing reproduction:** no implementation fork/commit yet; maintainer approval is pending. Exact [upstream revision tested](https://github.com/betterlaspinas/betterlaspinas/commit/7fffa3961785b1b04dd27252650c4c811d22ad5a); reproduction artifacts are kept in this course repo.
-- **Screenshots/logs:** [full actual RED output](reproduction/initial-red-output.txt), [runnable harness](reproduction/icon-contract.test.mjs), and [environment/rerun report](reproduction/README.md). No browser screenshot yet.
-- **My findings:** confirmed missing data and non-enforcement of the requested icon contract, not the full visual symptom. Actual catalog counts and home-page data source differ from the issue's description; these remain explicit clarification points rather than invented results.
+- **Screenshots/logs:** [initial RED output](reproduction/initial-red-output.txt), [runnable harness](reproduction/icon-contract.test.mjs), [Business desktop](reproduction/visual/business-desktop.png), [Certificates control](reproduction/visual/certificates-desktop.png), [mobile](reproduction/visual/business-mobile.png), [narrow](reproduction/visual/business-narrow.png), [DOM measurements](reproduction/visual/layout-metrics.json), and [actual baseline receipts](reproduction/visual/baseline-results.json).
+- **My findings:** confirmed missing data, non-enforcement of the icon contract, and the rendered 8 px leading gap beside empty Business icons; the 8 Business titles are consistently indented rather than randomly misaligned with one another. Actual catalog counts and the home page's separate static icon list differ from the issue's description; these remain clarification points. An unrelated narrow-screen header overlap is documented but not changed.
 
 **Toolkit**
 
 - Tool: the actual upstream Node validator, a separate Node contract harness, and live `repro-check` grading through Claude-work Sonnet.
-- What it produced: actual baseline exit 0, intentional RED with 1 positive control pass / 3 contract failures, and [repro-check accept with all six checks](reproduction/repro-check-output.md).
-- Difficulties: pnpm was not installed and no app/browser reproduction was attempted; the issue's catalog count and home data-source description differ from this revision.
-- What changed: used the dependency-free validator for the initial evidence, explicitly limited the conclusion to the data/schema facet, and recorded browser/full-suite work as pending rather than claiming it passed. The grade does not authorize implementation or mean the issue is fixed.
+- What it produced: intentional issue RED (1 positive control pass / 3 contract failures), [initial repro-check accept with six checks](reproduction/repro-check-output.md), production browser screenshots/geometry, and a separately passing baseline (299 tests across 18 files, lint, typecheck, validation, build).
+- Difficulties: initial package-registry timeout, absent pnpm, Node 26 web-storage interference, timezone-dependent dates, a missing build site URL, and ESLint including the private local notes despite Git exclusion; source counts/home data wiring also differ from the issue.
+- What changed: used the pinned package-manager mirror without changing the lockfile, formatted only private notes, isolated Node storage and UTC as controls, supplied the documented site URL, and preserved first failures alongside passing receipts. No upstream code/assertions were weakened; passing baseline is not an issue fix, and maintainer approval is still required.
 
 ---
 
