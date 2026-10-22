@@ -1,0 +1,140 @@
+✔ positive control: a service with an icon is accepted by the real validator (0.833292ms)
+✖ every current service has a nonblank icon (1.893875ms)
+✖ the real validator rejects a service with no icon property (0.228417ms)
+✖ the real validator rejects an empty icon value (0.127292ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 1
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 72.218
+
+✖ failing tests:
+
+test at ../../ai301-coursework/beat-2-contribution/reproduction/icon-contract.test.mjs:20:1
+✖ every current service has a nonblank icon (1.893875ms)
+  AssertionError [ERR_ASSERTION]: Services lacking icons: business-permit-new, business-permit-renewal, special-permit, business-status-certificate, ctc-business-license, occupational-permit, occupational-permit-jobseeker, business-closure, sanitary-permit, cedula, senior-citizen-id, pwd-id, financial-assistance, burial-assistance, solo-parent-id, vaccination, health-certificate, medical-assistance, prenatal-checkup, real-property-tax, business-tax, tax-clearance, agricultural-loan, crop-insurance, fertilizer-assistance, building-permit, occupancy-permit, road-maintenance, scholarship, student-assistance, emergency-response, disaster-preparedness, environmental-clearance, tree-cutting-permit, cswdo-services, waste-management, tricycle-franchising, property-declaration, safety-seal
+  + actual - expected
+
+  + [
+  +   'business-permit-new',
+  +   'business-permit-renewal',
+  +   'special-permit',
+  +   'business-status-certificate',
+  +   'ctc-business-license',
+  +   'occupational-permit',
+  +   'occupational-permit-jobseeker',
+  +   'business-closure',
+  +   'sanitary-permit',
+  +   'cedula',
+  +   'senior-citizen-id',
+  +   'pwd-id',
+  +   'financial-assistance',
+  +   'burial-assistance',
+  +   'solo-parent-id',
+  +   'vaccination',
+  +   'health-certificate',
+  +   'medical-assistance',
+  +   'prenatal-checkup',
+  +   'real-property-tax',
+  +   'business-tax',
+  +   'tax-clearance',
+  +   'agricultural-loan',
+  +   'crop-insurance',
+  +   'fertilizer-assistance',
+  +   'building-permit',
+  +   'occupancy-permit',
+  +   'road-maintenance',
+  +   'scholarship',
+  +   'student-assistance',
+  +   'emergency-response',
+  +   'disaster-preparedness',
+  +   'environmental-clearance',
+  +   'tree-cutting-permit',
+  +   'cswdo-services',
+  +   'waste-management',
+  +   'tricycle-franchising',
+  +   'property-declaration',
+  +   'safety-seal'
+  + ]
+  - []
+
+      at TestContext.<anonymous> (file:///Users/adamnugroho/Projects/ai301-coursework/beat-2-contribution/reproduction/icon-contract.test.mjs:22:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+      at Test.postRun (node:internal/test_runner/test:1537:19)
+      at Test.run (node:internal/test_runner/test:1462:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [
+      'business-permit-new',           'business-permit-renewal',
+      'special-permit',                'business-status-certificate',
+      'ctc-business-license',          'occupational-permit',
+      'occupational-permit-jobseeker', 'business-closure',
+      'sanitary-permit',               'cedula',
+      'senior-citizen-id',             'pwd-id',
+      'financial-assistance',          'burial-assistance',
+      'solo-parent-id',                'vaccination',
+      'health-certificate',            'medical-assistance',
+      'prenatal-checkup',              'real-property-tax',
+      'business-tax',                  'tax-clearance',
+      'agricultural-loan',             'crop-insurance',
+      'fertilizer-assistance',         'building-permit',
+      'occupancy-permit',              'road-maintenance',
+      'scholarship',                   'student-assistance',
+      'emergency-response',            'disaster-preparedness',
+      'environmental-clearance',       'tree-cutting-permit',
+      'cswdo-services',                'waste-management',
+      'tricycle-franchising',          'property-declaration',
+      'safety-seal'
+    ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at ../../ai301-coursework/beat-2-contribution/reproduction/icon-contract.test.mjs:24:1
+✖ the real validator rejects a service with no icon property (0.228417ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  true !== false
+
+      at TestContext.<anonymous> (file:///Users/adamnugroho/Projects/ai301-coursework/beat-2-contribution/reproduction/icon-contract.test.mjs:27:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+      at Test.postRun (node:internal/test_runner/test:1537:19)
+      at Test.run (node:internal/test_runner/test:1462:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at ../../ai301-coursework/beat-2-contribution/reproduction/icon-contract.test.mjs:29:1
+✖ the real validator rejects an empty icon value (0.127292ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  true !== false
+
+      at TestContext.<anonymous> (file:///Users/adamnugroho/Projects/ai301-coursework/beat-2-contribution/reproduction/icon-contract.test.mjs:30:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+      at Test.postRun (node:internal/test_runner/test:1537:19)
+      at Test.run (node:internal/test_runner/test:1462:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

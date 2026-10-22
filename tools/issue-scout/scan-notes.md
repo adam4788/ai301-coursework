@@ -1,5 +1,15 @@
 # Scout work log
 
+## 2026-10-21 — Unit 6 scope patch and fresh availability
+
+- Replaced `Bounded, specified scope` with the staff `scope-feasible` floor: one identifiable task is enough; unresolved design edges increase the separate difficulty note rather than failing scope. All other rows and verdict semantics remain unchanged; difficulty is live-summary-only and omitted from eval JSON.
+- Real stale-candidate finding: last week's exact `https://github.com/Logixia/logixia/issues/120` now returns REST 404 and GraphQL cannot resolve it. Do not rewrite the old saved grade or silently substitute another issue number. Both nanocoder #1631 and #1633 now have assignees, so neither is available for this claim.
+- Fresh direct Claude-work Sonnet grading rejected current course-listed Logixia #31, #30 and #35 for active implementation PRs/claims; both fallback site picks betterlaspinas #274 and Kaoto #3527 passed all required checks. Full raw readable outputs and source hashes are retained; portable outputs are in `unit6-logixia-regrading.md` and `unit6-replacement-regrading.md`.
+- Adam explicitly chose betterlaspinas #274, authorized the course reservation and exact public claim, and both were verified: https://github.com/betterlaspinas/betterlaspinas/issues/274#issuecomment-6330461055. A claim/request is not maintainer assignment; implementation is waiting for approval.
+- Reviewer caution: the replacement grader called #274 moderate despite naming an open validation strictness edge. The staff difficulty definition places an unresolved design edge under ambitious; preserve this caution separately rather than silently rewriting the raw response. The catalog is currently 45/39, not the issue's 50/44, and PopularServices uses a separate static icon list. Rubric accept is not proof that every issue-description detail is current.
+- Local output validation initially rejected the ordinary word difficulty in notes even though no difficulty rating/field was present. Corrected that overly broad validator and revalidated the same actual response without paying for a replacement or editing raw model output.
+
+
 ## 2026-10-17 — migration and free-stage validation
 
 - Re-read the signed-in live Unit 5 Assignment (`https://courses.codepath.org/courses/ai301/unit/5#!projects`), official starter commit `27e32023dae108fc2a0cb12b4914f3ce19d450b1`, and the entire canonical contribution-story template. Unit 5 is this week's Toolkit entry, not a final Units 5–8 submission.

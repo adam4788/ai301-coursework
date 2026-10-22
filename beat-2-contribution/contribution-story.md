@@ -1,4 +1,4 @@
-# Contribution: [Issue Title]
+# Contribution: Service icons and required-icon validation
 
 Path: `beat-2-contribution/contribution-story.md`
 
@@ -8,11 +8,10 @@ format criteria grade exactly that. Your course repo link is the whole submissio
 files and no evidence uploads are part of Assignment 5.
 
 **Contribution Number:** [1]
-**Student:** [Student name]
-**GitHub Username:** [your GitHub username, exactly as it appears on your profile - no @, no
-profile URL. Your comments upstream are identified by this name.]
-**Issue:** [GitHub issue link]
-**Pull Request:** [GitHub PR link, once opened]
+**Student:** Adam Nugroho
+**GitHub Username:** adam4788
+**Issue:** https://github.com/betterlaspinas/betterlaspinas/issues/274
+**Pull Request:** Not opened; maintainer assignment/approval is pending.
 
 One repository, built across units 5 to 8, telling the whole story of your real
 contribution. Fill it as you work, not at the end — the sections below ask for evidence that
@@ -59,11 +58,9 @@ one in the week it belongs to.
 
 2026-10-17 — Migrated the Unit 1 skill to `issue-scout`, preserving the complete backup, rubric, evidence guide, and original fit-profile paragraph, then authored four TypeScript/JavaScript queries grounded in the documented web/document project history and tested deterministic URL dedupe and metadata-only ranking. The executed queries returned 400 records, 396 unique issues, and 295 survivors; real CodePath-work Claude grading of the exact top five produced two accepts and three rejects, with the complete read-out saved in [scan-output.md](../tools/issue-scout/scan-output.md). A separate direct run on three issues from the course Issue Selection site accepted [Logixia #120](https://github.com/Logixia/logixia/issues/120), rejected [nanocoder #1631](https://github.com/Nano-Collective/nanocoder/issues/1631) for a recent unwithdrawn claim, and rejected [nanocoder #1633](https://github.com/Nano-Collective/nanocoder/issues/1633) for an assignee and open PR; these are graded candidates, not a final issue choice or claim. The work OAuth session had expired and the first tool-driven scan hit its budget guard, so the work subscription was restored and tested before grading, the failed attempt was retained, and the same top five were completed using compact source-hashed live evidence; the actual failures, fixes, and the broad ranking's specialist/closed-source false leads are recorded in [dated scan notes](../tools/issue-scout/scan-notes.md).
 
-**Unit 6: [one line on the tool work]**
+**Unit 6: voice guard, shared repo memory, fresh grading, and initial reproduction**
 
-[2-4 sentences: the voice-guard, the repo-memory file. What broke or
-fell short, and what changed because of it. "Nothing broke" counts when
-it is true - say how you know.]
+2026-10-21 — Installed the staff voice guard, preserved all prior rules in one shared guide, updated the real-repository scopes, and verified clean-draft PASS, unsupported-result STOP, and actual Claude Code hook blocking; the Upstream examples are explicitly AI-assisted drafts pending my personal review. Fresh scouting rejected three occupied Logixia candidates and accepted two replacement site picks, after which I explicitly chose [Better Las Piñas #274](https://github.com/betterlaspinas/betterlaspinas/issues/274), reserved it on the course site, and approved the [posted claim/request for assignment](https://github.com/betterlaspinas/betterlaspinas/issues/274#issuecomment-6330461055). A broad troubleshooting rule initially blocked a legitimate scope question, so the guide was clarified to distinguish troubleshooting from assignment/scope requests while still blocking invented test results; stale candidates, an overstrict local JSON validator, and two unsuccessful Claude posting attempts were preserved rather than presented as successes. One scoped orientation was distilled into a locally excluded `CLAUDE.local.md`, and the unmodified checkout produced [initial data/schema reproduction evidence](reproduction/README.md): one positive control passed and three icon-contract assertions failed, with visual reproduction, full application checks, maintainer approval, and my personal reflection still pending.
 
 **Unit 7: [one line on the tool work]**
 
@@ -79,24 +76,20 @@ drafted, what you did with the draft.]
 
 ## Why I Chose This Issue
 
-[1-2 paragraphs in your own words: how you searched, what your scan
-surfaced, what your scout's verdict said, why this issue fits your
-profile, and what you hope to learn. If your scout's verdict on it
-was reject and you chose it anyway, say so here and say why; choosing
-against your own tool silently is what loses points. Close with an
-honest read of the tool itself: where the scout fell short on a real
-wild search and what you changed or would change, or what convinced
-you it held up. **Record the link to your claim comment in this section too.**
-Not claimed yet? Write `claim pending` and today's date where the link goes,
-and add the link the moment your claim lands.]
+**AI-assisted factual draft for my review; my personal learning goal remains to be written in my own words.**
+
+On October 21 I selected Better Las Piñas #274 after reviewing the recommendation and explicitly approving its reservation and exact claim wording. Last week's accepted Logixia #120 was no longer resolvable, and fresh thread/PR checks rejected Logixia #31, #30, and #35 as occupied; I did not claim over those contributors. The patched scout accepted #274 and Kaoto #3527. #274 has a concrete TypeScript/JSON data-and-validation target with a runnable regression starting point, consistent with the documented fit profile; the Kaoto alternative had a less certain Monaco diagnosis. The full replacement read-out is saved in [unit6-replacement-regrading.md](../tools/issue-scout/unit6-replacement-regrading.md).
+
+The scout helped by reading occupancy beyond assignees: Logixia #30 had no comments or assignee but already had a partial open implementation PR. It is not a substitute for fresh source checks: the chosen issue describes 50 services and 44 missing icons, while the tested revision has 45 and 39, and its home page uses a separate static icon list. Its summary called #274 moderate despite flagging an open validation edge; under the supplied difficulty definition that edge warrants an ambitious caution until clarified, without changing the accept verdict. My [claim/request for assignment](https://github.com/betterlaspinas/betterlaspinas/issues/274#issuecomment-6330461055) is posted and verified as `adam4788`; I am waiting for maintainer approval before implementation.
+
+**Personal reflection pending:** what I hope to learn and why this project interests me, in my own words.
 
 **Toolkit**
 
-- Tool: issue-scout (your scout: your search strategy, your rubric),
-  and how you used it
-- What it produced: [the scan and its verdict on this issue, described]
-- Difficulties: [where it fell short, or "none met" if none did]
-- What changed: [what you patched or would update, or "nothing"]
+- Tool: `issue-scout` in direct live mode using source-hashed evidence from current course-site candidates and actual Claude-work Sonnet grading.
+- What it produced: three Logixia rejects, then two replacement accepts; Adam selected #274 and approved its verified public claim.
+- Difficulties: stale issue URLs, competing PRs without assignees, and a difficulty-summary edge the raw grader understated.
+- What changed: replaced strict scope rejection with `scope-feasible`, added separate live difficulty notes, and retained explicit reviewer cautions instead of silently editing raw model output.
 
 ---
 
@@ -104,26 +97,26 @@ and add the link the moment your claim lands.]
 
 **Problem Description**
 
-[In your own words, what is broken or missing?]
+AI-assisted factual draft: service records can omit icons, leaving an unconditional icon slot in the category-card heading, while schema/type validation does not require the field.
 
 **Expected Behavior**
 
-[What should happen?]
+Every canonical service should have a meaningful, non-empty Bootstrap icon; omission should fail validation and the type should require the field. Category-card alignment and the home-page spot checks must be verified in a running app.
 
 **Current Behavior**
 
-[What actually happens?]
+At tested upstream revision `7fffa3961785b1b04dd27252650c4c811d22ad5a`, 39 of 45 services omit `icon`; the baseline config check still passes, and the real validator accepts both omitted and empty icon values. The browser spacing symptom has not yet been locally measured.
 
 **Affected Components**
 
-[Which parts of the codebase are involved?]
+`app/config/services.json`, `app/config/schema/services.schema.json`, `app/types/config.ts` (`ServiceItem`), `scripts/validate-config.mjs`, and `app/pages/services/[category].vue`. The home `PopularServices.vue` component was inspected and currently uses a separate static icon list.
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
+- Tool: one scoped Claude-work orientation over the catalog, schema, type, category/home entrypoints, and validator; direct source inspection verified the summary.
+- What it produced: local `CLAUDE.local.md` with the maintainer's AGENTS import, relevant commands, claim/approval status, and distilled subsystem findings; `git check-ignore` verifies the memory stays local.
+- Difficulties: the model inferred maintainer intent from an optional field and lacked the home component's internals; neither inference was accepted as proof.
+- What changed: inspected `PopularServices.vue` directly, recorded its separate static data source, and retained the exact catalog-count discrepancy.
 
 ---
 
@@ -131,31 +124,27 @@ and add the link the moment your claim lands.]
 
 **Environment Setup**
 
-[What a stranger would need to stand this up: your operating system,
-the relevant versions (language, runtime, package manager, the project
-itself), and how you set the project up. Then the challenges you faced
-and how you solved them, or that none came up.]
+macOS 27.0.1 ARM64, Node v26.7.0, project 1.2.0 at upstream `7fffa3961785b1b04dd27252650c4c811d22ad5a`. The project declares `pnpm@10.29.2`, but pnpm was absent locally; no dependency install/full app startup was performed. The dependency-free actual validator was run directly with Node, and the external harness imports that exact upstream implementation. Complete rerun commands and limitations are in [reproduction/README.md](reproduction/README.md).
 
 **Steps to Reproduce**
 
-1. [Step 1]
-2. [Step 2]
-3. [Observed result]
+1. Clone upstream separately and check out `7fffa3961785b1b04dd27252650c4c811d22ad5a`; leave its source unchanged.
+2. Run `node scripts/validate-config.mjs` from that checkout: actual exit 0 despite missing catalog icons.
+3. Set `ICON_REPRO_REPO` to that checkout and run the coursework [icon-contract.test.mjs](reproduction/icon-contract.test.mjs) using `node --test`: actual exit 1, one positive control passes and three desired-contract assertions fail.
+4. Preserve this as partial data/schema reproduction; do not describe it as visual confirmation or a completed fix.
 
 **Reproduction Evidence**
 
-- **Commit showing reproduction:** [link to commit in your fork]
-- **Screenshots/logs:** [if applicable]
-- **My findings:** [what you discovered during reproduction; an
-  honest, evidenced cannot-reproduce that led you to re-pick or ask
-  the maintainer belongs here and costs you nothing]
+- **Commit showing reproduction:** no implementation fork/commit yet; maintainer approval is pending. Exact [upstream revision tested](https://github.com/betterlaspinas/betterlaspinas/commit/7fffa3961785b1b04dd27252650c4c811d22ad5a); reproduction artifacts are kept in this course repo.
+- **Screenshots/logs:** [full actual RED output](reproduction/initial-red-output.txt), [runnable harness](reproduction/icon-contract.test.mjs), and [environment/rerun report](reproduction/README.md). No browser screenshot yet.
+- **My findings:** confirmed missing data and non-enforcement of the requested icon contract, not the full visual symptom. Actual catalog counts and home-page data source differ from the issue's description; these remain explicit clarification points rather than invented results.
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
+- Tool: the actual upstream Node validator, a separate Node contract harness, and live `repro-check` grading through Claude-work Sonnet.
+- What it produced: actual baseline exit 0, intentional RED with 1 positive control pass / 3 contract failures, and [repro-check accept with all six checks](reproduction/repro-check-output.md).
+- Difficulties: pnpm was not installed and no app/browser reproduction was attempted; the issue's catalog count and home data-source description differ from this revision.
+- What changed: used the dependency-free validator for the initial evidence, explicitly limited the conclusion to the data/schema facet, and recorded browser/full-suite work as pending rather than claiming it passed. The grade does not authorize implementation or mean the issue is fixed.
 
 ---
 
