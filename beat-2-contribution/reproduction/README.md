@@ -6,7 +6,23 @@ Issue: https://github.com/betterlaspinas/betterlaspinas/issues/274
 
 Claim/request for assignment: https://github.com/betterlaspinas/betterlaspinas/issues/274#issuecomment-6330461055
 
-Captured: 2026-10-21, America/Phoenix. This is local coursework evidence, not a posted reproduction comment or a fix.
+Follow-up posted and verified as `adam4788`: https://github.com/betterlaspinas/betterlaspinas/issues/274#issuecomment-6484502126
+
+The AI-assisted follow-up passed the voice guard and shared the independently rerun catalog count:
+
+````text
+Hi! Following up on my request to work on this. With AI assistance, on macOS ARM64 and Node v26.7.0, I checked the unmodified checkout at `7fffa3961785b1b04dd27252650c4c811d22ad5a`. From the repo root I ran:
+
+```sh
+node -e 'const {services}=require("./app/config/services.json"); console.log(`services=${services.length} missing_icons=${services.filter(s => !s.icon).length}`)'
+```
+
+It printed `services=45 missing_icons=39`, rather than the 50 and 44 mentioned in the issue.
+
+Is this issue still available for me to work on? Thanks!
+````
+
+Captured: 2026-10-21, America/Phoenix. The initial report below is local coursework evidence, not a fix; the later follow-up is quoted above.
 
 ## Environment and code state
 
@@ -65,7 +81,7 @@ The last two assertions received `true` from the validator where the desired con
 
 **Not confirmed locally:** the rendered phantom gap, category-page baseline alignment, or a home-page visual defect. No screenshot, DOM measurement, full-suite pass, or fixed build is claimed. This is an initial partial reproduction of the data/validation facet, not proof that every symptom in the issue is reproduced.
 
-**Next gates:** wait for maintainer assignment/approval; clarify whitespace-only icon policy and the catalog/home-source discrepancies. Then stand up the app and complete visual reproduction before implementing the agreed change. No additional upstream comment or PR was posted with this report.
+**Next gates:** wait for maintainer assignment/approval; clarify whitespace-only icon policy and the catalog/home-source discrepancies. Then stand up the app and complete visual reproduction before implementing the agreed change. At the time of this initial report, no additional upstream comment or PR had been posted.
 
 ## Assistance
 
