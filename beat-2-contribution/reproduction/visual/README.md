@@ -51,7 +51,7 @@ The captured PNGs are viewport screenshots; cards below the viewport are covered
 
 [Home control](home-popular-services-control.json) records real icon glyphs in the home Popular Services list. At this source revision, that component has its own static icon array, so it is not proof the canonical service catalog is correct. [Hydration control](hydrated-menu-control.json) records an actual menu toggle after the Vue app mounted.
 
-The catalog still contains 45 services and 39 missing icons, versus the issue's 50/44. The maintainer has not yet answered the whitespace-only validation question or approved assignment. No implementation, fork, PR, or additional upstream comment was made. Adam's personal reflection and review of the AI-assisted voice examples remain unanswered; they were not filled in on his behalf.
+The catalog still contains 45 services and 39 missing icons, versus the issue's 50/44. The maintainer has not yet answered the whitespace-only validation question or approved assignment. No implementation, fork, PR, or additional upstream comment was made. As of this 2026-10-21 baseline, Adam's personal reflection and review of the AI-assisted voice examples were still unanswered; later updates are recorded in the contribution story.
 
 ## Reproduction commands
 

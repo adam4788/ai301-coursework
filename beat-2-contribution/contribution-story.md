@@ -60,7 +60,7 @@ one in the week it belongs to.
 
 **Unit 6: voice guard, shared repo memory, fresh grading, and initial reproduction**
 
-2026-10-21 — Installed the staff voice guard, preserved all prior rules in one shared guide, updated the real-repository scopes, and verified clean-draft PASS, unsupported-result STOP, and actual Claude Code hook blocking; the Upstream examples are explicitly AI-assisted drafts pending my personal review. Fresh scouting rejected three occupied Logixia candidates and accepted two replacement site picks, after which I explicitly chose [Better Las Piñas #274](https://github.com/betterlaspinas/betterlaspinas/issues/274), reserved it on the course site, and approved the [posted claim/request for assignment](https://github.com/betterlaspinas/betterlaspinas/issues/274#issuecomment-6330461055). A broad troubleshooting rule initially blocked a legitimate scope question, so the guide was clarified to distinguish troubleshooting from assignment/scope requests while still blocking invented test results; stale candidates, an overstrict local JSON validator, and two unsuccessful Claude posting attempts were preserved rather than presented as successes. One scoped orientation was distilled into a locally excluded `CLAUDE.local.md`, the unmodified checkout produced [initial data/schema evidence](reproduction/README.md) with one positive control passing and three contract assertions failing, and a [browser/baseline follow-up](reproduction/visual/README.md) confirmed eight empty-icon headings with an 8 px gap while lint, typecheck, build, and all 299 baseline tests passed under the recorded environment; maintainer approval and my personal reflection remain pending.
+2026-10-21 — Installed the staff voice guard, preserved all prior rules in one shared guide, updated the real-repository scopes, and verified clean-draft PASS, unsupported-result STOP, and actual Claude Code hook blocking; the Upstream examples are AI-assisted drafts. Fresh scouting rejected three occupied Logixia candidates and accepted two replacement site picks, after which I explicitly chose [Better Las Piñas #274](https://github.com/betterlaspinas/betterlaspinas/issues/274), reserved it on the course site, and approved the [posted claim/request for assignment](https://github.com/betterlaspinas/betterlaspinas/issues/274#issuecomment-6330461055). A broad troubleshooting rule initially blocked a legitimate scope question, so the guide was clarified to distinguish troubleshooting from assignment/scope requests while still blocking invented test results; stale candidates, an overstrict local JSON validator, and two unsuccessful Claude posting attempts were preserved rather than presented as successes. One scoped orientation was distilled into a locally excluded `CLAUDE.local.md`, the unmodified checkout produced [initial data/schema evidence](reproduction/README.md) with one positive control passing and three contract assertions failing, and a [browser/baseline follow-up](reproduction/visual/README.md) confirmed eight empty-icon headings with an 8 px gap while lint, typecheck, build, and all 299 baseline tests passed under the recorded environment; maintainer approval remains pending.
 
 **Unit 7: [one line on the tool work]**
 
@@ -76,13 +76,17 @@ drafted, what you did with the draft.]
 
 ## Why I Chose This Issue
 
-**AI-assisted factual draft for my review; my personal learning goal remains to be written in my own words.**
+**The factual account below was drafted with AI assistance.**
 
 On October 21 I selected Better Las Piñas #274 after reviewing the recommendation and explicitly approving its reservation and exact claim wording. Last week's accepted Logixia #120 was no longer resolvable, and fresh thread/PR checks rejected Logixia #31, #30, and #35 as occupied; I did not claim over those contributors. The patched scout accepted #274 and Kaoto #3527. #274 has a concrete TypeScript/JSON data-and-validation target with a runnable regression starting point, consistent with the documented fit profile; the Kaoto alternative had a less certain Monaco diagnosis. The full replacement read-out is saved in [unit6-replacement-regrading.md](../tools/issue-scout/unit6-replacement-regrading.md).
 
 The scout helped by reading occupancy beyond assignees: Logixia #30 had no comments or assignee but already had a partial open implementation PR. It is not a substitute for fresh source checks: the chosen issue describes 50 services and 44 missing icons, while the tested revision has 45 and 39, and its home page uses a separate static icon list. Its summary called #274 moderate despite flagging an open validation edge; under the supplied difficulty definition that edge warrants an ambitious caution until clarified, without changing the accept verdict. My [claim/request for assignment](https://github.com/betterlaspinas/betterlaspinas/issues/274#issuecomment-6330461055) is posted and verified as `adam4788`; I am waiting for maintainer approval before implementation.
 
-**Personal reflection pending:** what I hope to learn and why this project interests me, in my own words.
+The project interests me because it is connected to a city, which makes it easier for me to visualize who I am helping and who the work could impact.
+
+On October 28, I reviewed and approved the summarized communication rules; the examples remain labeled as AI-assisted and hypothetical.
+
+I want to learn what kinds of imagery or icons balance professionalism, accessibility, and creativity.
 
 **Toolkit**
 

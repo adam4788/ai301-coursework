@@ -45,7 +45,7 @@ Use an issue-specific title naming the changed behavior. Keep every summary bull
 
 ## Upstream: how I talk to maintainers
 
-Draft provenance: these new examples were drafted with AI assistance at Adam's request and are pending his personal review. They are hypothetical examples, not claims that any test, investigation, or public post happened. The earlier PathReview identity describes the sandbox; these rules extend the same concise voice to real open-source repositories.
+Draft provenance: these examples were drafted with AI assistance at Adam's request. Adam approved the summarized communication rules on October 28, 2026; the specific examples are hypothetical, not claims that any test, investigation, or public post happened. The earlier PathReview identity describes the sandbox; these rules extend the same concise voice to real open-source repositories.
 
 ### Claims I post
 
