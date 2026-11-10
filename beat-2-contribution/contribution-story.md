@@ -13,6 +13,8 @@ files and no evidence uploads are part of Assignment 5.
 **Issue:** https://github.com/betterlaspinas/betterlaspinas/issues/274
 **Pull Request:** Not opened; maintainer assignment/approval is pending.
 
+**Preparation status (November 10, 2026):** Partial contribution story, updated with AI assistance from existing work and verified source evidence. No completed fix, PR, or portal submission is claimed. The issue remains open and unassigned; its two comments are my claim and follow-up, with no maintainer response or thumbs-up. The technical plan below is proposed work, not implementation.
+
 One repository, built across units 5 to 8, telling the whole story of your real
 contribution. Fill it as you work, not at the end — the sections below ask for evidence that
 is far easier to write down as it happens than to reconstruct in the last weekend.
@@ -62,10 +64,9 @@ one in the week it belongs to.
 
 2026-10-21 — Installed the staff voice guard, preserved all prior rules in one shared guide, updated the real-repository scopes, and verified clean-draft PASS, unsupported-result STOP, and actual Claude Code hook blocking; the Upstream examples are AI-assisted drafts. Fresh scouting rejected three occupied Logixia candidates and accepted two replacement site picks, after which I explicitly chose [Better Las Piñas #274](https://github.com/betterlaspinas/betterlaspinas/issues/274), reserved it on the course site, and approved the [posted claim/request for assignment](https://github.com/betterlaspinas/betterlaspinas/issues/274#issuecomment-6330461055). A broad troubleshooting rule initially blocked a legitimate scope question, so the guide was clarified to distinguish troubleshooting from assignment/scope requests while still blocking invented test results; stale candidates, an overstrict local JSON validator, and two unsuccessful Claude posting attempts were preserved rather than presented as successes. One scoped orientation was distilled into a locally excluded `CLAUDE.local.md`, the unmodified checkout produced [initial data/schema evidence](reproduction/README.md) with one positive control passing and three contract assertions failing, and a [browser/baseline follow-up](reproduction/visual/README.md) confirmed eight empty-icon headings with an 8 px gap while lint, typecheck, build, and all 299 baseline tests passed under the recorded environment; maintainer approval remains pending.
 
-**Unit 7: [one line on the tool work]**
+**Unit 7: ship-gate installation and baseline checks**
 
-[2-4 sentences: the ship-gate and your gate manifest. What it produced
-on your real branch, what fought you, what changed because of it.]
+2026-11-04 — Installed the public starter's ship-gate and a local, CI-sourced manifest with validation, lint, typecheck, and a single test run; all four checks passed on the unmodified `main` checkout, not on an implementation branch. A new Claude Code session dispatched both the voice guard and ship-gate, and both blocked the `gh pr create --help` test; separate synthetic tests also blocked a direct PR attempt on `main`. The test run rewrote tracked `.nuxtrc` from test-utils 4.1.0 to the installed 4.2.0, so I restored its exact pre-run contents; the starter hook also failed to detect a nested-shell test, so it is not a universal safeguard. The live Unit 7 Assignment instructions remain unread, and no full gate pass, fix, or PR is claimed; maintainer approval is still pending.
 
 **Unit 8: [one line on the tool work]**
 
@@ -158,93 +159,86 @@ macOS 27.0.1 ARM64, Node v26.7.0, project 1.2.0 at unmodified upstream `7fffa396
 
 **Analysis**
 
-[Your analysis of the root cause: what is causing the issue, traced
-to the files and functions involved.]
+AI-assisted analysis of the recorded, unmodified revision `7fffa3961785b1b04dd27252650c4c811d22ad5a`: `app/config/services.json` has 39 of 45 services without icons. `definitions.service.required` in `app/config/schema/services.schema.json` omits `icon`, and `ServiceItem` in `app/types/config.ts` makes it optional. The category-card template in `app/pages/services/[category].vue` renders the empty icon element inside a heading with a gap. In `scripts/validate-config.mjs`, `validateNode` checks required properties and types, but has no string-length or pattern validation; adding a schema constraint alone would therefore not enforce a non-empty value in this validator.
 
 **Proposed Solution**
 
-[High-level description of your fix approach, and what you are
-deliberately NOT changing.]
+After maintainer assignment or approval, recheck current main and its contribution instructions, then backfill meaningful Bootstrap icons before requiring the field. Keep the change focused on the service catalog and its icon contract. Preserve existing valid icon choices, unrelated service content, routes, and the home page's separate static list. Clarify the whitespace-only edge with the maintainer before claiming that behavior is agreed. No code implementing this proposal has been written.
 
 **Implementation Plan**
 
-1. [Modify file X to do Y]
-2. [Add or change Z]
-3. [Update tests]
+1. Recheck issue #274, its assignment, current main, and service counts. The recorded 45/39 counts are from the pinned reproduction, not a claim about today's upstream main.
+2. Update missing `icon` values in `app/config/services.json` using per-service Bootstrap classes consistent with `categories.json` and existing certificates. Run configuration validation before changing the contract.
+3. Add `icon` to `definitions.service.required` in `app/config/schema/services.schema.json`, declare `ServiceItem.icon` required in `app/types/config.ts`, and implement an explicitly agreed non-empty string rule in `scripts/validate-config.mjs` / `validateNode`. Add regression checks through `validateAgainstSchema` so requiredness and non-empty enforcement are actually exercised.
+4. Re-run the issue reproduction against the changed checkout, inspect category pages and the home page, and run validation, lint, typecheck, tests, and build. Record any runtime controls and actual outputs.
+5. Review the complete diff, record any deviations, run the installed ship-gate on the real contribution branch, and prepare the PR with before/after evidence and AI-use disclosure. No PR opening or push is part of this preparation.
 
-[Record deviations here as they happen: what changed mid-build and
-why. A recorded deviation is honest work; silent drift is not.]
+**Deviations:** Implementation has not started. There are no implemented deviations to report.
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
+- Tool: direct inspection of the pinned source and existing reproduction harness; AI-assisted plan drafting.
+- What it produced: a file- and function-specific proposed plan, including the validator's missing string-constraint handling.
+- Difficulties: maintainer approval is absent, the recorded catalog counts differ from the issue, and whitespace behavior is unresolved.
+- What changed: separated proposed work from completed work and made validator coverage an explicit step instead of assuming schema metadata is enforced.
 
 ---
 
 ## Testing Strategy
 
-[What observable checks prove the fix: your reproduction steps re-run
-against the built change (before and after), and the repo's own test
-suite or checks with the outcome shown. "Tests pass" with nothing
-observable named is not a strategy.]
+The first observable check is the issue-specific reproduction before and after the future fix. Re-run `reproduction/icon-contract.test.mjs` against the chosen implementation checkout: the real validator must accept a valid icon, reject a missing icon, reject an empty icon, and the full catalog must have nonblank values. The saved baseline is one pass and three intentional failures; no after-fix result exists yet. Add a whitespace-only case if that requirement is agreed.
+
+For the visual part, repeat the recorded Business/Certificates comparison at 1280, 390, and 320 px. Verify actual icon glyphs and title geometry, then check the other categories and home Popular Services. The existing screenshots demonstrate the baseline, not the proposed result.
+
+The second observable check is the project's own validation and suite: `pnpm validate`, `pnpm lint`, `pnpm typecheck`, `pnpm test --run`, and `pnpm build`. Capture actual output for the implementation revision and report failed or unrun checks explicitly. The previous 299-test baseline and November 4 manifest checks are historical results on unmodified main. The real branch must pass the full ship-gate and pr-precheck; a hook wiring test does not satisfy that requirement.
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
+- Tool: the existing Node contract harness, production-browser evidence, and the installed ship-gate manifest.
+- What it produced: a concrete before/after test plan anchored to saved failing contract tests and passing baseline controls.
+- Difficulties: Node 26 storage and timezone behavior required documented environment controls; the gate's nested-shell detection has a known gap.
+- What changed: require the issue-specific contract and visual checks alongside the normal suite, and distinguish all historical baseline results from future implementation results.
 
 ---
 
 ## Implementation Notes
 
-[A running log, added to as you work. Date each entry. What you
-built, decisions you made when you made them, wrong turns included.]
+**2026-10-21:** Completed initial data/schema reproduction and later production-browser checks on unmodified upstream. The contract was intentionally RED while the normal baseline passed; no fix was made. See [initial evidence](reproduction/README.md) and [browser follow-up](reproduction/visual/README.md).
 
-**[Date]**
+**2026-10-28:** Posted the approved [follow-up](https://github.com/betterlaspinas/betterlaspinas/issues/274#issuecomment-6484502126) asking whether the issue was available and reporting the actual catalog-count discrepancy. No assignment was inferred from posting it.
 
-[Entry]
+**2026-11-04:** Installed the public-starter ship-gate and tested its four manifest checks on unmodified main. Both installed hooks blocked a direct PR help test, while a synthetic nested-shell test exposed a detection gap. The test-induced `.nuxtrc` change was restored to its exact prior content. No implementation branch, PR, or full gate pass resulted.
 
-**[Date]**
-
-[Entry]
+**2026-11-10:** Checked the existing Hermes course history and local files before duplicating work. The latest course session had explicitly reported the story and submission incomplete. Rechecked the live issue and both comment reaction lists: open, unassigned, two comments by `adam4788`, no maintainer response or reaction. Prepared the technical plan and testing strategy above, with AI assistance, while preserving the hold on implementation.
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
+- Tool: Git status/history, existing Hermes course records, source inspection, and live GitHub issue/comment/reaction reads.
+- What it produced: an evidence-grounded dated log and a clear distinction between installed tooling, proposed implementation, and completed contribution work.
+- Difficulties: the previous standalone safe-draft file was no longer present, and local Unit 7 edits had not been pushed.
+- What changed: recovered the actual progress from the canonical story and saved receipts rather than claiming that prior activity practice completed Assignment 5.
 
 ---
 
 ## Pull Request
 
-**PR Link:** [GitHub PR URL when opened]
+**PR Link:** Not opened.
 
-**PR Description:** [what the PR says; much of the content above
-adapts into it]
+**PR Description:** Not published. A future description must identify issue #274, the exact implemented scope, before/after contract and visual results, normal check results, and AI assistance. These results must be recorded after the work actually occurs.
 
 **Maintainer Feedback:**
 
-- [Date]: [feedback received, or "none yet"; silence is a normal
-  state and costs you nothing]
-- [Date]: [how you addressed it]
+- 2026-11-10: No maintainer response or reaction appears on the claim or follow-up. The issue has no assignee. The contribution instructions require assignment or a maintainer thumbs-up before starting.
+- No feedback has been addressed because none has been received.
 
-**Status:** [Awaiting review / Iterating / Merged / Closed. The
-status is a fact you record, never a grade: the PR is graded as
-opened.]
+**Status:** Not opened; awaiting maintainer assignment or approval before implementation. A local draft and passing baseline are not a submitted PR.
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
+- Tool: live GitHub issue, comment, and comment-reaction reads.
+- What it produced: verified current claim status and confirmed no maintainer thumbs-up on either of my comments.
+- Difficulties: the project has not responded to the claim or follow-up.
+- What changed: retained an explicit blocked status instead of filling a nonexistent PR URL or claiming a full gate pass.
 
 ---
 
@@ -252,25 +246,21 @@ opened.]
 
 **Technical Skills Gained**
 
-[What you learned technically, named concretely.]
+Pending Adam's own reflection. Evidence available to discuss includes the gap between schema metadata and the actual validator, the distinction between issue-contract failures and a green baseline, and hook wiring versus a full branch gate pass. These prompts are AI-assisted and are not presented as personal reflections already supplied by Adam.
 
 **Challenges Overcome**
 
-[What was hard and how you solved it; point at the real events, the
-Toolkit blocks above are full of them.]
+The factual work record includes a package-registry timeout handled with the pinned package-manager mirror, Node storage/timezone controls, a source-count discrepancy, and the test-induced `.nuxtrc` change restored after inspection. Adam's personal account of these events remains to be added.
 
 **What I'd Do Differently Next Time**
 
-[Reflection on your process.]
+Pending Adam's own words. A useful prompt is how the unanswered maintainer claim and difference between completed practice, local work, and portal submission would change the next contribution's workflow.
 
 ---
 
 ## Resources Used
 
-[What actually helped, not a reading list. List things this story
-already shows you using: the doc you followed to set the environment
-up, the thread that explained the bug, the person who answered you.
-One real entry beats ten plausible ones.]
-
-- [Link to documentation that helped]
-- [Discussion, issue, or post that helped]
+- [Issue #274](https://github.com/betterlaspinas/betterlaspinas/issues/274): supplied the icon-contract and visual acceptance criteria; the reproduction recorded discrepancies instead of silently assuming the issue counts were current.
+- [Contribution instructions at the tested revision](https://github.com/betterlaspinas/betterlaspinas/blob/7fffa3961785b1b04dd27252650c4c811d22ad5a/CONTRIBUTING.md): guided setup, project checks, and the requirement to wait for assignment or a maintainer thumbs-up.
+- [Unit 7 public starter](https://github.com/codepath/ai301-unit7-starter/tree/df8305c2109e7e111994394735bf92ef6dc275ae): used for the ship-gate installation and manifest behavior; it does not substitute for unread portal instructions.
+- [Initial reproduction](reproduction/README.md) and [browser/baseline follow-up](reproduction/visual/README.md): preserve commands, actual failures, passing controls, screenshots, and environment limits used in this story.
