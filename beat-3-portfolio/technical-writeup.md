@@ -8,6 +8,8 @@ I basically just tell the AI what's missing, what I need it to be, what um, what
 
 I added some test and then the maintainer approved it.
 
+https://github.com/NousResearch/hermes-agent/pull/152088
+
 ## What happened
 
 ### My design decisions

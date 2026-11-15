@@ -1,4 +1,4 @@
-# Contribution: Service icons and required-icon validation
+# Contribution: Generic voltage/current equation history (ENTS #832)
 
 Path: `beat-2-contribution/contribution-story.md`
 
@@ -10,10 +10,10 @@ files and no evidence uploads are part of Assignment 5.
 **Contribution Number:** [1]
 **Student:** Adam Nugroho
 **GitHub Username:** adam4788
-**Issue:** https://github.com/betterlaspinas/betterlaspinas/issues/274
-**Pull Request:** Not opened; maintainer assignment/approval is pending.
+**Issue:** https://github.com/jlab-sensing/ENTS-backend/issues/832
+**Pull Request:** https://github.com/jlab-sensing/ENTS-backend/pull/878 (draft, open; not merged)
 
-**Preparation status (November 10, 2026):** Partial contribution story, updated with AI assistance from existing work and verified source evidence. No completed fix, PR, or portal submission is claimed. The issue remains open and unassigned; its two comments are my claim and follow-up, with no maintainer response or thumbs-up. The technical plan below is proposed work, not implementation.
+**Current status (November 15, 2026 UTC):** AI-assisted factual update. ENTS #832 is the replacement contribution after instructor guidance; draft PR #878 is published and explicitly acknowledges overlapping PR #877. Latest local frontend validation passed 271 tests, lint, and build. Upstream CI and maintainer review remain pending. Each section separates the current ENTS evidence from the earlier Better Las Piñas investigation; the latter is retained, not relabeled as ENTS work. Personal reflections remain for Adam to supply.
 
 One repository, built across units 5 to 8, telling the whole story of your real
 contribution. Fill it as you work, not at the end — the sections below ask for evidence that
@@ -23,6 +23,8 @@ Contribution Number stays `[1]` unless you make more than one contribution this 
 just numbers them.
 
 ---
+
+> **Replacement contribution:** [ENTS issue #832](https://github.com/jlab-sensing/ENTS-backend/issues/832), [approach comment](https://github.com/jlab-sensing/ENTS-backend/issues/832#issuecomment-6784401766), [draft PR #878](https://github.com/jlab-sensing/ENTS-backend/pull/878), and [implementation report](ents-832/implementation.md). The draft was explicitly authorized for comparison with #877; no merge is requested or performed here.
 
 ## Toolkit
 
@@ -77,6 +79,16 @@ drafted, what you did with the draft.]
 
 ## Why I Chose This Issue
 
+**Current contribution — ENTS #832 (AI-assisted factual account):** Instructor guidance was to find another course-approved issue rather than bypass Better Las Piñas's wait-for-assignment requirement. ENTS #832 was checked against the course tracker and GitHub, then claimed on both; the public approach comment predates this draft PR. It offers a bounded frontend regression: sensor history exists, but voltage/current equations read only the legacy table. The later overlapping PR #877 is explicitly disclosed in #878.
+
+**Toolkit**
+- Tool: course tracker, instructor guidance, GitHub issue/PR inspection.
+- What it produced: a replacement issue and an explicit overlap check.
+- Difficulties: another contributor published a competing implementation while the local fix remained unpublished.
+- What changed: publish only an authorized draft that invites maintainer comparison, not an assumption of ownership.
+
+**Earlier investigation — Better Las Piñas #274:**
+
 **The factual account below was drafted with AI assistance.**
 
 On October 21 I selected Better Las Piñas #274 after reviewing the recommendation and explicitly approving its reservation and exact claim wording. Last week's accepted Logixia #120 was no longer resolvable, and fresh thread/PR checks rejected Logixia #31, #30, and #35 as occupied; I did not claim over those contributors. The patched scout accepted #274 and Kaoto #3527. #274 has a concrete TypeScript/JSON data-and-validation target with a runnable regression starting point, consistent with the documented fit profile; the Kaoto alternative had a less certain Monaco diagnosis. The full replacement read-out is saved in [unit6-replacement-regrading.md](../tools/issue-scout/unit6-replacement-regrading.md).
@@ -99,6 +111,16 @@ I want to learn what kinds of imagery or icons balance professionalism, accessib
 ---
 
 ## Understanding the Issue
+
+**Current contribution — ENTS #832:** `v`/`voltage` and `i`/`current` historical aliases resolve to legacy `power_data`, while generic POWER_VOLTAGE and POWER_CURRENT readings are loaded through the sensor API/cache. The request collector must also fetch these generic operands for equation-only dashboards and references to unselected cells. Fixing evaluation alone is insufficient if the cache never receives the data.
+
+**Toolkit**
+- Tool: source inspection of equationData.js, equationStreams.js, and historicalDataLoader.js.
+- What it produced: a mapping of direct-fetch, cache-evaluation, and request-collection paths.
+- Difficulties: unselected-cell references lack sensor metadata.
+- What changed: include the collector and unknown-metadata path in the implementation and tests.
+
+**Earlier investigation — Better Las Piñas #274:**
 
 **Problem Description**
 
@@ -126,6 +148,16 @@ At tested upstream revision `7fffa3961785b1b04dd27252650c4c811d22ad5a`, 39 of 45
 ---
 
 ## Reproduction Process
+
+**Current contribution — ENTS #832:** The original focused equation/catalog baseline passed 38 tests. The initial added regression file against original source then failed five cases while three compatibility controls passed, covering cached aliases, direct fetch, and equation-only collection. Coverage later expanded to 12 tests. These are automated frontend reproductions, not a claimed browser reproduction. See [implementation evidence](ents-832/implementation.md) and the [published regression file](https://github.com/adam4788/ENTS-backend/blob/3d78439723733f8a7c6ddbc14defa4ae3f4533ee/frontend/src/pages/dashboard/equation/genericPowerHistory.test.js).
+
+**Toolkit**
+- Tool: Vitest regression tests and baseline comparison.
+- What it produced: failing issue cases with passing compatibility controls.
+- Difficulties: a green existing suite did not cover generic operands in the missing paths.
+- What changed: add targeted cases before relying on the full-suite result.
+
+**Earlier investigation — Better Las Piñas #274:**
 
 **Environment Setup**
 
@@ -157,6 +189,16 @@ macOS 27.0.1 ARM64, Node v26.7.0, project 1.2.0 at unmodified upstream `7fffa396
 
 ## Solution Approach
 
+**Current contribution — ENTS #832:** Introduce a shared fallback map for voltage/current aliases; apply it to direct fetching, cached evaluation, and request collection. Preserve the entire legacy operand series when any reading is non-null, including zero. Use the generic series only when legacy history is empty or all-null; do not fill individual gaps or mix conflicting timestamps. Preserve `p`/`power` semantics and live behavior. Unknown sensor metadata permits a generic-history probe; absent data remains empty.
+
+**Toolkit**
+- Tool: AI-assisted implementation and independent code review.
+- What it produced: five changed files, +182/-13, including changelog and tests.
+- Difficulties: initial handling missed equations referencing cells outside the dashboard selection.
+- What changed: add the unknown-metadata request path and an integration regression for unselected cells.
+
+**Earlier investigation — Better Las Piñas #274:**
+
 **Analysis**
 
 AI-assisted analysis of the recorded, unmodified revision `7fffa3961785b1b04dd27252650c4c811d22ad5a`: `app/config/services.json` has 39 of 45 services without icons. `definitions.service.required` in `app/config/schema/services.schema.json` omits `icon`, and `ServiceItem` in `app/types/config.ts` makes it optional. The category-card template in `app/pages/services/[category].vue` renders the empty icon element inside a heading with a gap. In `scripts/validate-config.mjs`, `validateNode` checks required properties and types, but has no string-length or pattern validation; adding a schema constraint alone would therefore not enforce a non-empty value in this validator.
@@ -186,6 +228,16 @@ After maintainer assignment or approval, recheck current main and its contributi
 
 ## Testing Strategy
 
+**Current contribution — ENTS #832:** Fresh local verification on November 15 UTC at commit `3d78439723733f8a7c6ddbc14defa4ae3f4533ee`: `npm test -- --run` passed **35 files / 271 tests**; `npm run lint` passed; `npm run build` passed with a chunk-size warning. All commands run from `frontend/`. The 12 added regressions cover aliases, direct/cache fallback, absent/all-null readings, legacy zero and precedence, unchanged power, deduplication, unknown metadata, and an unselected-cell equation. No browser/backend/Docker verification or upstream CI pass is claimed.
+
+**Toolkit**
+- Tool: Vitest, ESLint, Vite production build.
+- What it produced: a current full frontend check, beyond the earlier 255-test snapshot.
+- Difficulties: local frontend checks cannot establish backend/deployment or real-browser behavior.
+- What changed: state those limits explicitly and keep the upstream PR in draft.
+
+**Earlier investigation — Better Las Piñas #274:**
+
 The first observable check is the issue-specific reproduction before and after the future fix. Re-run `reproduction/icon-contract.test.mjs` against the chosen implementation checkout: the real validator must accept a valid icon, reject a missing icon, reject an empty icon, and the full catalog must have nonblank values. The saved baseline is one pass and three intentional failures; no after-fix result exists yet. Add a whitespace-only case if that requirement is agreed.
 
 For the visual part, repeat the recorded Business/Certificates comparison at 1280, 390, and 320 px. Verify actual icon glyphs and title geometry, then check the other categories and home Popular Services. The existing screenshots demonstrate the baseline, not the proposed result.
@@ -202,6 +254,16 @@ The second observable check is the project's own validation and suite: `pnpm val
 ---
 
 ## Implementation Notes
+
+**Current contribution — ENTS #832:** The local fix and 12 regressions are published in [commit 3d784397](https://github.com/adam4788/ENTS-backend/commit/3d78439723733f8a7c6ddbc14defa4ae3f4533ee), based on `d45e6491498f0a42554e1145a248e189a12c6cc6`. On November 15 UTC, fresh checks passed; the branch was pushed to the contributor fork and draft PR #878 opened with Adam's explicit authorization. The draft identifies overlap with #877 and offers consolidation rather than competing merge claims. No maintainer approval or merge has occurred.
+
+**Toolkit**
+- Tool: Git diff/history, GitHub draft PR creation and verification.
+- What it produced: one commit, five changed files, a verified draft PR, and reproducible frontend checks.
+- Difficulties: publication had been held while authorization and overlapping work were reviewed.
+- What changed: retain draft status and report exact boundaries rather than treating publication as acceptance.
+
+**Earlier investigation — Better Las Piñas #274:**
 
 **2026-10-21:** Completed initial data/schema reproduction and later production-browser checks on unmodified upstream. The contract was intentionally RED while the normal baseline passed; no fix was made. See [initial evidence](reproduction/README.md) and [browser follow-up](reproduction/visual/README.md).
 
@@ -222,23 +284,19 @@ The second observable check is the project's own validation and suite: `pnpm val
 
 ## Pull Request
 
-**PR Link:** Not opened.
+**PR Link:** https://github.com/jlab-sensing/ENTS-backend/pull/878
 
-**PR Description:** Not published. A future description must identify issue #274, the exact implemented scope, before/after contract and visual results, normal check results, and AI assistance. These results must be recorded after the work actually occurs.
+**PR Description:** Draft fix for ENTS #832. The published description states the generic historical fallback, request-collection coverage, compatibility choices, 12 regressions, actual 271-test/lint/build results, and AI assistance. It explicitly notes overlapping PR #877 and invites maintainer comparison or consolidation. No new dependencies, environment variables, ports, or container parameters are introduced.
 
-**Maintainer Feedback:**
+**Maintainer Feedback:** None received on #878 at publication verification. Upstream checks were not yet listed; no CI pass is claimed. Earlier #832 approach: https://github.com/jlab-sensing/ENTS-backend/issues/832#issuecomment-6784401766.
 
-- 2026-11-10: No maintainer response or reaction appears on the claim or follow-up. The issue has no assignee. The contribution instructions require assignment or a maintainer thumbs-up before starting.
-- No feedback has been addressed because none has been received.
-
-**Status:** Not opened; awaiting maintainer assignment or approval before implementation. A local draft and passing baseline are not a submitted PR.
+**Status:** Draft/open, not merged. Head `3d78439723733f8a7c6ddbc14defa4ae3f4533ee`, one commit, five changed files, +182/-13. Earlier Better Las Piñas #274 never received a PR; that investigation remains distinct from this ENTS submission.
 
 **Toolkit**
-
-- Tool: live GitHub issue, comment, and comment-reaction reads.
-- What it produced: verified current claim status and confirmed no maintainer thumbs-up on either of my comments.
-- Difficulties: the project has not responded to the claim or follow-up.
-- What changed: retained an explicit blocked status instead of filling a nonexistent PR URL or claiming a full gate pass.
+- Tool: Git push, GitHub PR creation, and independent `gh pr view` verification.
+- What it produced: draft PR #878 with reproduction/test steps, scope and AI disclosure.
+- Difficulties: overlapping open PR #877 requires a maintainer choice; local green checks do not establish upstream acceptance.
+- What changed: use a transparent draft, do not merge, and await review.
 
 ---
 
@@ -259,6 +317,9 @@ Pending Adam's own words. A useful prompt is how the unanswered maintainer claim
 ---
 
 ## Resources Used
+
+- [ENTS #832](https://github.com/jlab-sensing/ENTS-backend/issues/832) and [draft PR #878](https://github.com/jlab-sensing/ENTS-backend/pull/878): current contribution and review status.
+- [ENTS implementation report](ents-832/implementation.md): local reproduction, changes, testing and limitations.
 
 - [Issue #274](https://github.com/betterlaspinas/betterlaspinas/issues/274): supplied the icon-contract and visual acceptance criteria; the reproduction recorded discrepancies instead of silently assuming the issue counts were current.
 - [Contribution instructions at the tested revision](https://github.com/betterlaspinas/betterlaspinas/blob/7fffa3961785b1b04dd27252650c4c811d22ad5a/CONTRIBUTING.md): guided setup, project checks, and the requirement to wait for assignment or a maintainer thumbs-up.
