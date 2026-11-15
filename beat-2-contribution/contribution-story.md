@@ -13,7 +13,7 @@ files and no evidence uploads are part of Assignment 5.
 **Issue:** https://github.com/jlab-sensing/ENTS-backend/issues/832
 **Pull Request:** https://github.com/jlab-sensing/ENTS-backend/pull/878 (draft, open; not merged)
 
-**Current status (November 15, 2026 UTC):** AI-assisted factual update. ENTS #832 is the replacement contribution after instructor guidance; draft PR #878 is published and explicitly acknowledges overlapping PR #877. Latest local frontend validation passed 271 tests, lint, and build. Upstream CI and maintainer review remain pending. Each section separates the current ENTS evidence from the earlier Better Las Piñas investigation; the latter is retained, not relabeled as ENTS work. Personal reflections remain for Adam to supply.
+**Current status (November 15, 2026 UTC):** AI-assisted factual update. ENTS #832 is the replacement contribution after instructor guidance; draft PR #878 is published and explicitly acknowledges overlapping PR #877. Latest local frontend validation passed 271 tests, lint, and build. Upstream CI and maintainer review remain pending. Each section separates the current ENTS evidence from the earlier Better Las Piñas investigation; the latter is retained, not relabeled as ENTS work. Adam’s dictated personal reflections are included below.
 
 One repository, built across units 5 to 8, telling the whole story of your real
 contribution. Fill it as you work, not at the end — the sections below ask for evidence that
@@ -70,10 +70,9 @@ one in the week it belongs to.
 
 2026-11-04 — Installed the public starter's ship-gate and a local, CI-sourced manifest with validation, lint, typecheck, and a single test run; all four checks passed on the unmodified `main` checkout, not on an implementation branch. A new Claude Code session dispatched both the voice guard and ship-gate, and both blocked the `gh pr create --help` test; separate synthetic tests also blocked a direct PR attempt on `main`. The test run rewrote tracked `.nuxtrc` from test-utils 4.1.0 to the installed 4.2.0, so I restored its exact pre-run contents; the starter hook also failed to detect a nested-shell test, so it is not a universal safeguard. The live Unit 7 Assignment instructions remain unread, and no full gate pass, fix, or PR is claimed; maintainer approval is still pending.
 
-**Unit 8: [one line on the tool work]**
+**Unit 8: PR-monitor/playbook work not completed**
 
-[2-4 sentences: the PR-monitor and your playbook. What it read, what it
-drafted, what you did with the draft.]
+No completed course-specific PR-monitor installation, playbook, or run was found in the available work record. Live GitHub checks were used to inspect issue #832, overlapping PR #877, and the published draft #878, but these checks are not represented as a completed PR-monitor exercise. This part of the assignment remains incomplete.
 
 ---
 
@@ -302,17 +301,21 @@ The second observable check is the project's own validation and suite: `pnpm val
 
 ## Learnings and Reflections
 
+The following reflections are Adam's dictated words. They describe his experience and perspective, not a claim that a maintainer explained their priorities or that ENTS PR #878 has been reviewed or merged.
+
 **Technical Skills Gained**
 
-Pending Adam's own reflection. Evidence available to discuss includes the gap between schema metadata and the actual validator, the distinction between issue-contract failures and a green baseline, and hook wiring versus a full branch gate pass. These prompts are AI-assisted and are not presented as personal reflections already supplied by Adam.
+I learned that um, AI nowadays is capable of um, creating their own PR. Um since you did the um uh the analy- analyzation itself and creating the um fix and the test, um that was really good and that's something I learned that um AI nowadays are capable
 
 **Challenges Overcome**
 
-The factual work record includes a package-registry timeout handled with the pinned package-manager mirror, Node storage/timezone controls, a source-count discrepancy, and the test-induced `.nuxtrc` change restored after inspection. Adam's personal account of these events remains to be added.
+I learned that um sometimes the maintainers is going to take a while, or sometimes your PR not get looked until the issue itself is urgent or something. So I, I that's what I learned
+
+Waiting is mainly the thing because um the assignment was due, um, but there was no review or anything, any feedback, but other than that, um, I think Um, working on open source project itself is um, uh, requires patience
 
 **What I'd Do Differently Next Time**
 
-Pending Adam's own words. A useful prompt is how the unanswered maintainer claim and difference between completed practice, local work, and portal submission would change the next contribution's workflow.
+Next time um, I would not focus on just one open source project. I would try on other open source project as well, um um to get um For example, for the assignment of Um, submitting the PR and getting it reviewed and Getting it merged, I would do multiple PRs instead of just waiting on one.
 
 ---
 
