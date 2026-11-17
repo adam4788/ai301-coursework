@@ -11,9 +11,9 @@ files and no evidence uploads are part of Assignment 5.
 **Student:** Adam Nugroho
 **GitHub Username:** adam4788
 **Issue:** https://github.com/jlab-sensing/ENTS-backend/issues/832
-**Pull Request:** https://github.com/jlab-sensing/ENTS-backend/pull/878 (draft, open; not merged)
+**Pull Request:** https://github.com/jlab-sensing/ENTS-backend/pull/878 (closed, unmerged; originally opened as a draft)
 
-**Current status (November 15, 2026 UTC):** AI-assisted factual update. ENTS #832 is the replacement contribution after instructor guidance; draft PR #878 is published and explicitly acknowledges overlapping PR #877. Latest local frontend validation passed 271 tests, lint, and build. Upstream CI and maintainer review remain pending. Each section separates the current ENTS evidence from the earlier Better Las Piñas investigation; the latter is retained, not relabeled as ENTS work. Adam’s dictated personal reflections are included below.
+**Current status (November 17, 2026 UTC):** AI-assisted factual update. ENTS #832 is the replacement contribution after instructor guidance. Draft PR #878 was published with overlap with #877 disclosed; on November 17, maintainer jmadden173 closed #878 unmerged because #877 was already addressing the issue, and said it could be reopened if #877 became stale. PR #877 remains open and unmerged at this check. The last recorded local frontend validation passed 271 tests, lint, and build; no new test run or upstream CI pass is claimed. Unit 8 PR-monitor/playbook work remains incomplete. Each section separates the ENTS evidence from the earlier Better Las Piñas investigation. Adam’s dictated personal reflections remain unchanged below.
 
 One repository, built across units 5 to 8, telling the whole story of your real
 contribution. Fill it as you work, not at the end — the sections below ask for evidence that
@@ -254,6 +254,8 @@ The second observable check is the project's own validation and suite: `pnpm val
 
 ## Implementation Notes
 
+**2026-11-17 — ENTS status update (AI-assisted factual account):** Maintainer jmadden173 closed #878 unmerged in favor of existing PR #877, with conditional reopening if #877 becomes stale. Updated the story’s current status and feedback; retained the original implementation, test limits, and personal reflection without claiming new work or a new grade. [Maintainer comment](https://github.com/jlab-sensing/ENTS-backend/pull/878#issuecomment-6963326292).
+
 **Current contribution — ENTS #832:** The local fix and 12 regressions are published in [commit 3d784397](https://github.com/adam4788/ENTS-backend/commit/3d78439723733f8a7c6ddbc14defa4ae3f4533ee), based on `d45e6491498f0a42554e1145a248e189a12c6cc6`. On November 15 UTC, fresh checks passed; the branch was pushed to the contributor fork and draft PR #878 opened with Adam's explicit authorization. The draft identifies overlap with #877 and offers consolidation rather than competing merge claims. No maintainer approval or merge has occurred.
 
 **Toolkit**
@@ -287,15 +289,19 @@ The second observable check is the project's own validation and suite: `pnpm val
 
 **PR Description:** Draft fix for ENTS #832. The published description states the generic historical fallback, request-collection coverage, compatibility choices, 12 regressions, actual 271-test/lint/build results, and AI assistance. It explicitly notes overlapping PR #877 and invites maintainer comparison or consolidation. No new dependencies, environment variables, ports, or container parameters are introduced.
 
-**Maintainer Feedback:** None received on #878 at publication verification. Upstream checks were not yet listed; no CI pass is claimed. Earlier #832 approach: https://github.com/jlab-sensing/ENTS-backend/issues/832#issuecomment-6784401766.
+**Maintainer Feedback:**
 
-**Status:** Draft/open, not merged. Head `3d78439723733f8a7c6ddbc14defa4ae3f4533ee`, one commit, five changed files, +182/-13. Earlier Better Las Piñas #274 never received a PR; that investigation remains distinct from this ENTS submission.
+- November 17, 2026: [jmadden173 commented](https://github.com/jlab-sensing/ENTS-backend/pull/878#issuecomment-6963326292), “#877 is already looking at this. I'll re-open if it becomes stale.” The maintainer closed #878 unmerged at 22:51:40 UTC. This is an overlap/coordination outcome, not a stated defect in the patch.
+- November 17, 2026: Updated this contribution story to record the closure and preserve the implementation/test evidence. No reopening, new competing PR, or reply to the maintainer was performed. Reopening is conditional, not a scheduled commitment.
+- Earlier #832 approach: https://github.com/jlab-sensing/ENTS-backend/issues/832#issuecomment-6784401766. No upstream CI pass is claimed.
+
+**Status:** Closed, unmerged (opened as a draft). Head `3d78439723733f8a7c6ddbc14defa4ae3f4533ee`, one commit, five changed files, +182/-13. Earlier Better Las Piñas #274 never received a PR; that investigation remains distinct from this ENTS submission.
 
 **Toolkit**
 - Tool: Git push, GitHub PR creation, and independent `gh pr view` verification.
 - What it produced: draft PR #878 with reproduction/test steps, scope and AI disclosure.
 - Difficulties: overlapping open PR #877 requires a maintainer choice; local green checks do not establish upstream acceptance.
-- What changed: use a transparent draft, do not merge, and await review.
+- What changed: published a transparent draft, then recorded the maintainer’s closure in favor of existing PR #877 without reopening or claiming acceptance.
 
 ---
 
